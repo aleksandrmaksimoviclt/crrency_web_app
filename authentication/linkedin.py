@@ -7,7 +7,7 @@ client_id = '77zdi1zo7xqmyv'
 client_secret = 'mrQZZaFyBBPwREda'
 authorization_base_url = 'https://www.linkedin.com/uas/oauth2/authorization'
 token_url = 'https://www.linkedin.com/uas/oauth2/accessToken'
-redirect_url = 'https://frozen-hamlet-3237.herokuapp.com/'
+redirect_url = 'https://127.0.0.1/'
 
 
 def login():
