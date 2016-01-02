@@ -13,16 +13,22 @@ def index(request):
     return render_to_response('authentication/login.html', csrf_token)
 
 def register(request):
+    return render(request, 'authentication/register.html', {})
+
+def user_create(request):
     state, msg = new_user(request)
-
-
+    if state:
+        return render_to_response('authentication/register_success.html', {})
+    else:
+        return render_to_response('authentication/register.html', {})
+    
 def basic(request):
     username = request.POST.get('username', '')
     password = request.POST.get('password', '')
     user = auth.authenticate(username=username, password=password)
     if user is not None:
         auth.login(request, user)
-        return HttpResponseRedirect('/dashboard')
+        return HttpResponseRedirect('/dashboard/')
     else:
         return HttpResponseRedirect('/authentication/login')
 
