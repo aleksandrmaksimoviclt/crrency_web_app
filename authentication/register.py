@@ -30,7 +30,7 @@ def register(request):
 
 def activation_mail(user):
     try:
-        hyperlink = 'http://127.0.0.1/authentication/user/%s/activate' % user.id
+        hyperlink = 'https://frozen-hamlet-3237.herokuapp.com/authentication/user/%s/activate' % user.id
         email = EmailMessage('Crrency.co', 'Hi %s, Your account have been successfully created.' \
             'You can access our website by pressing this link ' \
             '%s' % (user.username, hyperlink), to=[user.email])
