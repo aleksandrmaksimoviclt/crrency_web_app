@@ -4,6 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import auth
 from .linkedin import login as linkedin_login
 from .register import register as new_user
+from .register import user_activate
 
 
 
@@ -22,6 +23,10 @@ def user_create(request):
     else:
         return render_to_response('authentication/register.html', {})
     
+def activate(request, user_id):
+    msg = user_activate(user_id)
+    return HttpResponse(msg)
+
 def basic(request):
     username = request.POST.get('username', '')
     password = request.POST.get('password', '')
