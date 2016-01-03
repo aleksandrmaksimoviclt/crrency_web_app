@@ -141,5 +141,5 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'lukas.dambr@gmail.com'
-EMAIL_HOST_PASSWORD = os.environ.get("TEST_EMAIL_PASSWORD", '')
+EMAIL_HOST_USER = 'crrency.co@gmail.com'
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD", '')
