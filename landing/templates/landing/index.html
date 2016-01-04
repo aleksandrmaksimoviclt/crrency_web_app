@@ -1,0 +1,80 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Crrency.co</title>
+
+    <!-- CSS  -->
+    <!-- Google Material Design Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize CSS Framework -->
+    <link href="{% static 'frontend/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{% static 'frontend/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <!-- Materialize CSS Framework | Custom CSS -->
+    <link href="{% static 'frontend/css/custom.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <!-- Fullpage.js CSS -->
+    <link href="{% static 'frontend/css/jquery.fullPage.css' %}" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+<body>
+<div class="navbar-fixed">
+    <nav id="navbar" class="transparent noshadow">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo"><img class="navbarlogo" src="{% static 'frontend/img/logo.png' %}"></img></a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="authentication/login/">Sign in</a></li>
+                <li><a class="cta" href="authentication/register/">Create a new crrency</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="#">Sass</a></li>
+                <li><a href="#">Components</a></li>
+                <li><a href="#">Javascript</a></li>
+                <li><a href="#">Mobile</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="blue" id="fullpage">
+    <div class="section nopadding"></div>
+</div>
+
+<container id="about-us">
+    <h1>About Us</h1>       
+</container>
+
+<!--  Scripts-->
+<!-- jQuery Library -->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!-- Materialize.js -->
+<script src="{% static 'frontend/js/materialize.js' %}"></script>
+<!-- Fullpage.js js -->
+<script src="{% static 'frontend/js/fullpage.js/vendors/jquery.slimscroll.js' %}" type="text/javascript"></script>
+<script src="{% static 'frontend/js/fullpage.js/jquery.fullPage.js' %}" type="text/javascript" ></script>
+<!-- Materialize.js Initialization -->
+<script src="{% static 'frontend/js/init.js' %}" type="text/javascript"></script>
+</body>
+</html>
+
+
+
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<body>
+    <a href="authentication/login/">
+        <input value='Login' class='btn btn-default'></input>
+    </a>
+</body>
+<body>
+    <a href="authentication/register/">
+        <input value='Register' class='btn btn-default'></input>
+    </a>
+</body>

@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('landing.urls')),
     url(r'^authentication/', include('authentication.urls')),
-
+    url(r'^dashboard/', include('dashboard.urls')),
 ]

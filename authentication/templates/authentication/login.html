@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<form action="/authentication/basic/" method="post">{% csrf_token %}
+    <fieldset>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input class="form-control" name="username" type="username" autofocus>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input class="form-control" placeholder="Password" name="password" type="password" value="">
+        </div>
+        <div class="checkbox">
+            <label>
+                <input name="remember" type="checkbox" value="Remember Me">Remember Me
+            </label>
+        </div>
+        <!-- Change this to a button or input when using this as a form -->
+        <input type='submit' value='Login' class="btn btn-lg"></input>
+    </fieldset>
+    </form>

@@ -37,6 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    #crrency apps
+    'authentication.apps.AuthenticationConfig',
+    'dashboard.apps.DashboardConfig',
+    'landing.apps.LandingConfig',
+    
+    #pip installed apps
+    'django_extensions',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -119,3 +127,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, '')
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
+ADMIN_MEDIA_PREFIX = '/static/admin/'
+
+
+#email tests
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'crrency.co@gmail.com'
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD", '')
