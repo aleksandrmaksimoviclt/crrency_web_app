@@ -1,0 +1,301 @@
+/* Materialize css override */
+
+.modal .modal-content {
+  padding: 0px;
+}
+.spacer{
+margin-top:10%;}
+
+
+.spacer-responsive{
+margin-top:10rem;}
+
+/* Contact Form BEGIN*/
+.input-field label {
+    font-size: 2rem;
+}
+.input-field input{
+font-size: 2rem;
+height: 4rem;}
+
+.input-field label.active {
+  font-size: 1.5rem;
+  -webkit-transform: translateY(-95%);
+  -moz-transform: translateY(-95%);
+  -ms-transform: translateY(-95%);
+  -o-transform: translateY(-95%);
+  transform: translateY(-95%);
+}
+
+input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #ffc107;
+  box-shadow: 0 1px 0 0 #ffc107;
+}
+
+input[type=text]:focus:not([readonly]) + label, input[type=password]:focus:not([readonly]) + label, input[type=email]:focus:not([readonly]) + label, input[type=url]:focus:not([readonly]) + label, input[type=time]:focus:not([readonly]) + label, input[type=date]:focus:not([readonly]) + label, input[type=datetime-local]:focus:not([readonly]) + label, input[type=tel]:focus:not([readonly]) + label, input[type=number]:focus:not([readonly]) + label, input[type=search]:focus:not([readonly]) + label, textarea.materialize-textarea:focus:not([readonly]) + label {
+    color: #ffc107; }
+
+.input-field .prefix.active {
+  color: white;
+}
+.btn-large {
+  height: 65px;
+  line-height: 66px;
+  letter-spacing: 5px;
+}
+
+@media only screen and (min-width : 993px) and (max-width: 1199px){
+.input-field label {
+    font-size: 2.5rem;
+}
+.input-field input{
+font-size: 2.5rem;
+height: 5rem;}
+
+.input-field label.active {
+  font-size: 2rem;
+  -webkit-transform: translateY(-95%);
+  -moz-transform: translateY(-95%);
+  -ms-transform: translateY(-95%);
+  -o-transform: translateY(-95%);
+  transform: translateY(-95%);
+}
+
+.btn-large {
+  height: 65px;
+  line-height: 66px;
+  letter-spacing: 5px;
+}
+}
+
+div#contactformpopup {
+  opacity: 0.9 !important;
+}
+/* Contact Form END*/
+
+/*Materialize override end*/
+
+
+
+.fadein_fx {
+    text-align: center;
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:0.75;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:0.75;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:0.75;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 0.75;
+    }
+}
+.opacity{`
+opacity:0.75;
+}
+.number{
+font-size: xx-large;
+}
+@media only screen and (min-width : 993px) and (max-width: 1199px){
+.number{
+font-size: xx-large;
+}
+}
+@media only screen and (max-width: 992px){
+.number{
+font-size: x-large;
+}
+}
+
+/* Navigation bar */
+
+#navigation{
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+/* Welcome block */
+
+.triangledownbg {
+  background: url(../img/triangledownbg.png) repeat-x;
+  float: left;
+  width: 100%;
+  height: 9px;
+}
+
+.pretriangle{
+  height: 20px;
+}
+
+.triangleupbg {
+  background: url(../img/triangleupbg.png) repeat-x;
+  float: left;
+  width: 100%;
+  height: 9px;
+  margin-top: -5px;
+}
+
+#whitetransparent{
+    background: transparent;
+    background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+#contact_form{
+  color: #fff;
+  padding: 4em 2em 4em 2em;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 5px solid rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  height:100%;
+  width:100%;
+}
+
+.modal.bottom-sheet {
+  border-radius: 8px;
+}
+
+.success{
+height:10em; 
+margin-top:5em;
+}
+
+
+
+span.cta {
+  font-size: xx-large;
+}
+
+/* Technologies block */
+
+
+.html5 {
+  height: 100%;
+  padding: 15px;
+}
+.css3{
+  height: 100%;
+  padding: 15px;
+}
+.js{
+  height: 100%;
+  padding: 15px;
+}
+.php{
+  height: 100%;
+  padding: 15px;
+}
+.jquery{
+  height: 100%;
+  padding: 15px;
+}
+.photoshop {
+  height: 100%;
+  padding: 15px;
+}
+
+
+/* Logo */
+
+img#logo {
+    padding-top: 10px;
+}
+
+/* Video */
+
+#video-bg {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  overflow: hidden;
+  z-index: -999;
+}
+#video-bg > video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* 1. No object-fit support: */
+@media (min-aspect-ratio: 16/9) {
+  #video-bg > video { height: 300%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+  #video-bg > video { width: 300%; left: -100%; }
+}
+/* 2. If supporting object-fit, overriding (1): */
+@supports (object-fit: cover) {
+  #video-bg > video {
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+}
+.stopfade { 
+   opacity: .3;
+}
+
+
+/* Video end */
+
+::-webkit-scrollbar {
+      width: 0px;
+}
+body{background-color: white;}
+.roundedcorners{  -webkit-border-radius: 5px 5px;  -moz-border-radius: 5px 5px;  border-radius: 5px 5px;}
+.padding0{padding:0px;}
+.width100{width:100%;}
+.height100{height: 100%;}
+.heightinherit{height:inherit;}
+.caps{text-transform: uppercase;}
+.textleft{text-align:left;}
+.textright{text-align:right;}
+.textcenter{text-align:center;}
+.margin0{margin:0;}
+
+.paddingtop9 {padding-top: 9%;}
+.paddingtop15 {padding-top: 15%;}
+
+.block{
+	display:block;
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1400px){
+	html {
+    font-size: 16px;
+	}
+}
+
+@media screen and (min-width: 1401px) and (max-width: 2000px){
+	html {
+    font-size: 18px;
+	}
+}
