@@ -28,25 +28,14 @@ img#avatar{
 .marginbottom0{margin-bottom: 0;}
 .roundedcorner{border-radius:6px; }
 .width100{width:100%;}
-.textshadow{text-shadow: 5px 5px 5px rgba(0,0,0,.4);}
-
-#block1{
-	background-image: url("../img/background.jpg");
-	background-size: cover;
-}
-.text{
-	color: rgba(255,255,255,0.9);
-    /*display: block;
-    text-overflow: ellipsis;
-    overflow: hidden;*/
-    transition: color .28s ease;
-}
-.name {
-    font-size: x-large;
-}
-.nopadding{	padding: 0 !important;}
+.ycenter{position: relative; top: 50%; transform: translateY(-50%);};
+.nopadding{ padding: 0 !important;}
 .nomargin{  margin:0 !important;}
 
+.text{
+	color: rgba(255,255,255,0.9);
+    transition: color .28s ease;
+}
 .navbar-fixed {
     position: fixed;
 }
@@ -111,13 +100,7 @@ background-image: -ms-linear-gradient(left, #3498DB 0%, #E74D3C 100%);
 background-image: linear-gradient(to left, #3498DB 0%, #E74D3C 100%);
 }
 
-.cta-wrapper{
-    display: block;
-    position: absolute;
-    bottom: 0;
-    transform: translate3d(-50%,0,0);
-    left: 50%;
-}
+
 .ctacontainer{
     background: rgba(0,0,0,0.5);
     border-radius: 6px;
@@ -167,6 +150,11 @@ background-image: linear-gradient(to left, #3498DB 0%, #E74D3C 100%);
 }
 
 @media screen and (max-width: 600px){
-.no_mobile_container{
-    width:100%;
+    .no_mobile_container{
+        width:100%;
+    }
+}
+
+.cta-element{
+    margin: 20px;
 }
