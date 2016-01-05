@@ -124,11 +124,11 @@
 }
 
 .red {
-  background-color: #F44336 !important;
+  background-color: #E74C3C !important;
 }
 
 .red-text {
-  color: #F44336 !important;
+  color: #E74C3C !important;
 }
 
 .red.darken-1 {
@@ -6660,7 +6660,7 @@ nav ul a span.badge {
 
 @media only screen and (min-width: 993px) {
   .container {
-    width: 70%;
+    width: 90%;
   }
 }
 
@@ -8876,8 +8876,8 @@ input[type=search].invalid,
 input[type=search]:focus.invalid,
 textarea.materialize-textarea.invalid,
 textarea.materialize-textarea:focus.invalid {
-  border-bottom: 1px solid #F44336;
-  box-shadow: 0 1px 0 0 #F44336;
+  border-bottom: 1px solid #E74C3C;
+  box-shadow: 0 1px 0 0 #E74C3C;
 }
 
 input:not([type]).invalid + label:after,
@@ -8905,7 +8905,7 @@ input[type=search]:focus.invalid + label:after,
 textarea.materialize-textarea.invalid + label:after,
 textarea.materialize-textarea:focus.invalid + label:after {
   content: attr(data-error);
-  color: #F44336;
+  color: #E74C3C;
   opacity: 1;
 }
 

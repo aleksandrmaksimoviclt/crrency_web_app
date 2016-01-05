@@ -27,30 +27,49 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="#">Pricing</a></li>
                 <li><a href="#">Blog</a></li>
-                <li><a href="authentication/login/">Sign in</a></li>
+                <li><a href="authentication/login/">SLog in</a></li>
                 <li><a class="cta" href="authentication/register/">Create a new crrency</a></li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
-                <li><a href="#">Sass</a></li>
-                <li><a href="#">Components</a></li>
-                <li><a href="#">Javascript</a></li>
-                <li><a href="#">Mobile</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="authentication/login/">Log in</a></li>
+                <li><a href="authentication/register/">Create a new crrency</a></li>
             </ul>
         </div>
     </nav>
 </div>
 
 <div class="blue" id="fullpage">
-    <div class="section nopadding"></div>
+  <div class="section nopadding">
+    <div class="cta-wrapper">
+      <!--Welcome text-->
+      <div class=" container row">
+        <div class="col m5 s12">
+          <h1 class="text mobilecenter textshadow" style="font-weight: bold">Use your own currency!</h1>
+        </div>
+      </div>
+      <!--Create a new currency block-->
+      <div class="row mobilebottom">
+        <div class="col m5 s12 ctacontainer">
+          <h5 class="ctaheader text mobilecenter nomargin">World’s first platform for truly transparent economic networks</h5>
+          <a href="authentication/register/" class="red btn width100">Create a new crrency</a>
+        </div>
+      </div>
+    </div>
+<!-- DEVICES MOCKUP??! -->
+    <!--<div class="col m6 s12">
+      <img class="responsive" src="{% static 'frontend/img/multi-device-mockup.png' %}" alt="Multi device mockup"/>
+    </div>-->
+  </div>
 </div>
-
 <container id="about-us">
     <h1>About Us</h1>       
 </container>
 
 <!--  Scripts-->
 <!-- jQuery Library -->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="{% static 'frontend/js/jquery-2.1.1.min.js' %}"></script>
 <!-- Materialize.js -->
 <script src="{% static 'frontend/js/materialize.js' %}"></script>
 <!-- Fullpage.js js -->
@@ -61,20 +80,4 @@
 </body>
 </html>
 
-
-
-
-
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<body>
-    <a href="authentication/login/">
-        <input value='Login' class='btn btn-default'></input>
-    </a>
-</body>
-<body>
-    <a href="authentication/register/">
-        <input value='Register' class='btn btn-default'></input>
-    </a>
-</body>
+    
