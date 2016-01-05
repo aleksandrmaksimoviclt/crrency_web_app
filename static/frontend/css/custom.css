@@ -111,12 +111,18 @@ background-image: -ms-linear-gradient(left, #3498DB 0%, #E74D3C 100%);
 background-image: linear-gradient(to left, #3498DB 0%, #E74D3C 100%);
 }
 
-.ctawrapper{
-    height: 100%;
+.cta-wrapper{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    transform: translate3d(-50%,0,0);
+    left: 50%;
 }
 .ctacontainer{
     background: rgba(0,0,0,0.5);
     border-radius: 6px;
+    padding: 50px !important;
+    margin-bottom: 10vh;
 }
 
 @media screen and (max-width: 600px){
@@ -124,6 +130,7 @@ background-image: linear-gradient(to left, #3498DB 0%, #E74D3C 100%);
         background: rgba(0,0,0,0.5);
         padding: 30px !important;
         border-radius: 0px;
+        margin-bottom: 0vh;
     }
 }
 
@@ -153,4 +160,13 @@ background-image: linear-gradient(to left, #3498DB 0%, #E74D3C 100%);
 
 .fullpage{
     height:100vh;
+}
+
+.no_mobile_container{
+    width:90%;
+}
+
+@media screen and (max-width: 600px){
+.no_mobile_container{
+    width:100%;
 }
