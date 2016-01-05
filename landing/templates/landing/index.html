@@ -15,10 +15,9 @@
     <link href="{% static 'frontend/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
     <!-- Materialize CSS Framework | Custom CSS -->
     <link href="{% static 'frontend/css/custom.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <!-- Fullpage.js CSS -->
-    <link href="{% static 'frontend/css/jquery.fullPage.css' %}" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
 <body>
+<!--Fixed Navbar Menu-->
 <div class="navbar-fixed">
     <nav id="navbar" class="transparent noshadow">
         <div class="nav-wrapper">
@@ -39,30 +38,23 @@
         </div>
     </nav>
 </div>
-
-<div class="blue" id="fullpage">
-  <div class="section nopadding">
-    <div class="cta-wrapper">
-      <!--Welcome text-->
-      <div class=" container row">
-        <div class="col m5 s12">
-          <h1 class="text mobilecenter textshadow" style="font-weight: bold">Use your own currency!</h1>
-        </div>
-      </div>
-      <!--Create a new currency block-->
-      <div class="row mobilebottom">
-        <div class="col m5 s12 ctacontainer">
-          <h5 class="ctaheader text mobilecenter nomargin">World’s first platform for truly transparent economic networks</h5>
-          <a href="authentication/register/" class="red btn width100">Create a new crrency</a>
-        </div>
+<!--Landing Page Content-->
+<section class="blue fullpage" id="CTA">
+  <div class="cta-wrapper">
+    <div class=" container row">
+      <div class="col m5 s12">
+        <h1 class="text mobilecenter textshadow" style="font-weight: bold">Use your own currency!</h1>
       </div>
     </div>
-<!-- DEVICES MOCKUP??! -->
-    <!--<div class="col m6 s12">
-      <img class="responsive" src="{% static 'frontend/img/multi-device-mockup.png' %}" alt="Multi device mockup"/>
-    </div>-->
+    <!--Create a new currency block-->
+    <div class="row mobilebottom">
+      <div class="col m5 s12 ctacontainer">
+        <h5 class="ctaheader text mobilecenter nomargin">World’s first platform for truly transparent economic networks</h5>
+        <a href="authentication/register/" class="red btn width100">Create a new crrency</a>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 <container id="about-us">
     <h1>About Us</h1>       
 </container>
@@ -72,9 +64,6 @@
 <script src="{% static 'frontend/js/jquery-2.1.1.min.js' %}"></script>
 <!-- Materialize.js -->
 <script src="{% static 'frontend/js/materialize.js' %}"></script>
-<!-- Fullpage.js js -->
-<script src="{% static 'frontend/js/fullpage.js/vendors/jquery.slimscroll.js' %}" type="text/javascript"></script>
-<script src="{% static 'frontend/js/fullpage.js/jquery.fullPage.js' %}" type="text/javascript" ></script>
 <!-- Materialize.js Initialization -->
 <script src="{% static 'frontend/js/init.js' %}" type="text/javascript"></script>
 </body>

@@ -151,3 +151,6 @@ background-image: linear-gradient(to left, #3498DB 0%, #E74D3C 100%);
     }
 }
 
+.fullpage{
+    height:100vh;
+}
