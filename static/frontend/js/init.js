@@ -1,10 +1,4 @@
 $(window).load(function(){
-	$('#fullpage').fullpage({
-		autoScrolling: false,
-		fitToSection: false,
-		 //events
-        
-	});
 	$("#preloader").addClass("hide");
 	$("#view").removeClass("hide");
 	$(".button-collapse").sideNav();
