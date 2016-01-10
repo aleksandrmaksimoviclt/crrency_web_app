@@ -158,3 +158,53 @@ background-image: linear-gradient(to left, #3498DB 0%, #E74D3C 100%);
 .cta-element{
     margin: 20px;
 }
+
+.box{
+    max-width: 680px;
+}
+
+
+.emailmargin{
+    margin-right: 5vw;
+    margin-left: 5vw;
+    margin-bottom: 0px;
+}
+
+
+@media only screen and (min-width: 993px) {
+    .emailmargin{
+    margin-right: 20px;
+    margin-left:20px;
+    margin-bottom: 0px;
+    }
+}
+
+::-webkit-input-placeholder { 
+  color: #ECF0F1;
+    opacity: 0.8;
+}
+
+:-moz-placeholder { 
+  color: #ECF0F1;
+    opacity: 0.8;
+}
+
+::-moz-placeholder { 
+  color: #ECF0F1;
+    opacity: 0.8;
+}
+
+:-ms-input-placeholder { 
+  color: #ECF0F1;
+    opacity: 0.8;
+}
+
+::-ms-input-placeholder {
+    color: #ECF0F1;
+    opacity: 0.8;
+}
+
+:placeholder-shown {
+    color: #ECF0F1;
+    opacity: 0.8;
+}
