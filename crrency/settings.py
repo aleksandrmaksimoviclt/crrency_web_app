@@ -94,11 +94,6 @@ import dj_database_url
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-'''DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-    }
-}'''
 DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
 
 
@@ -158,7 +153,6 @@ EMAIL_HOST_USER = 'crrency.co@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD", '')
 
 try:
-    pass
-    #from .local_settings import *
+    from .local_settings import *
 except Exception as e:
     pass
