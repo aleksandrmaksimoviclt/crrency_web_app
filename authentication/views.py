@@ -25,6 +25,7 @@ def user_create(request):
     
 def activate(request, user_id):
     msg = user_activate(user_id)
+    
     return HttpResponse(msg)
 
 def basic(request):

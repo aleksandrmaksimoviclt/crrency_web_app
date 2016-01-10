@@ -4,4 +4,4 @@ from django.http import HttpResponse
 
 @login_required(login_url='/authentication/login/')
 def index(request):
-    return HttpResponse('success')
+    return HttpResponse('%s' %request.user)

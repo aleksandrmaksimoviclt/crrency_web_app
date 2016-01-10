@@ -13,4 +13,5 @@ class TeamMember(models.Model):
     position = models.CharField(max_length=100)
     description = models.CharField(max_length=100, blank=True, null=True)
 
-
+class Subscriber(models.Model):
+    email = models.EmailField(max_length=100, unique=True)
