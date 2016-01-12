@@ -26,13 +26,14 @@
         <h1 class="text nomargin cta-element" style="font-weight: bold">Use your own currency!</h1>
         <h5 class="text cta-element">World’s first platform for truly transparent economic networks</h5>
           <div class="row emailmargin">
-            <form id="collectemail" action="#">
+            <form action="/registration" method="POST" id="collect-email">
               <div class="row text center">
                 <div class="input-field col s12">
                   <input placeholder="Enter your email here" id="email" type="email" class="validate" autocomplete="off">
                 </div>
+                <div id="form-messages"></div>
               </div>
-              <a href="#" class="red btn cta-element">Notify me!</a>
+              <button type="submit"><a href="#" class="red btn cta-element">Notify me!</a></button>
             </form>
           </div>
         <div class="row">
