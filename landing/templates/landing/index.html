@@ -9,6 +9,7 @@
   <meta charset="UTF-8">
   <meta name="description" content="Crrency - the world’s first platform for building transparent economic network that let people transact goods and services using their own currencies!">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <link rel="icon" type="image/png" href="{% static 'frontend/img/favicon.png' %}" />
     <!-- CSS  -->
     <!-- Google Material Design Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -24,8 +25,8 @@
 <section class="fullpage coverimg" id="CTA">
     <div class="blacktint">
         <div class="row center ycenter box">
-            <h1 class="text nomargin cta-element" style="font-weight: bold">Use your own currency!</h1>
-            <h5 class="text cta-element">World’s first platform for truly transparent economic networks</h5>
+            <h1 class="text nomargin cta-element textshadow" style="font-weight: bold">Use your own currency!</h1>
+            <h5 class="text cta-element textshadow">World’s first platform for truly transparent economic networks</h5>
               <div class="row emailmargin">
                 
 
@@ -68,7 +69,11 @@ $(document).ready(function() {
                 success: function(response){
                      $('#message').html("<h3>Subscribed!</h3>") 
                      console.log(response)
-                 }
+                }
+                fail: function(response){
+                     $('#message').html("<h3>Subscribed!</h3>") 
+                     console.log(response)
+                }
             });
             return false;
        });
