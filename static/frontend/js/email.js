@@ -1,5 +1,11 @@
 $(document).ready(function() {
-    $('#submit').click(function(e)){
-        e.preventDefault();
-    }    
+	$('#submit').attr('disabled',true);
+	    $('#email').keyup(function(){
+	        if($(this).val().length !=0)
+	            $('#submit').attr('disabled', false);            
+	        else
+	            $('#submit').attr('disabled',true);
+	    })
 });
+
+    

@@ -35,13 +35,14 @@
                     <div class="input-field col s12">
                       <input placeholder="Enter your email here" id="email" type="email" class="validate" autocomplete="off" value=''>
                     </div>
-                    <div id="message"></div>
+                    <div class="row nomargin" id="message">
                   </div>
                   <input type="submit" class="red btn cta-element"></input>
                 </form>
               
               </div>
-            <div class="row nomargin" id="message">
+
+            
                 
             </div>
         </div>
@@ -56,6 +57,8 @@
 <script src="{% static 'frontend/js/materialize.js' %}"></script>
 <!-- Materialize.js Initialization -->
 <script src="{% static 'frontend/js/initforsubscription.js' %}" type="text/javascript"></script>
+<!-- Email Form Handling -->
+<script src="{% static 'frontend/js/email.js' %}" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function() {
     $("#collect-email").submit(function(){
@@ -69,15 +72,14 @@ $(document).ready(function() {
                 success: function(response){
                      $('#message').html("<h3>Subscribed!</h3>") 
                      console.log(response)
-                }
-                fail: function(response){
-                     $('#message').html("<h3>Subscribed!</h3>") 
+                },
+                error: function(response){
+                     $('#message').html("<h3>Whoops!</h3>") 
                      console.log(response)
                 }
             });
             return false;
        });
-
 });
 </script>
 </body>
