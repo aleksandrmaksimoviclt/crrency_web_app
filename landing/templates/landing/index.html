@@ -21,26 +21,28 @@
 
 <!--Landing Page Content-->
 
-<section class="blue fullpage" id="CTA">
-    <div class="row center ycenter box">
-        <h1 class="text nomargin cta-element" style="font-weight: bold">Use your own currency!</h1>
-        <h5 class="text cta-element">World’s first platform for truly transparent economic networks</h5>
-          <div class="row emailmargin">
-            
+<section class="fullpage coverimg" id="CTA">
+    <div class="blacktint">
+        <div class="row center ycenter box">
+            <h1 class="text nomargin cta-element" style="font-weight: bold">Use your own currency!</h1>
+            <h5 class="text cta-element">World’s first platform for truly transparent economic networks</h5>
+              <div class="row emailmargin">
+                
 
-            <form method="POST" id="collect-email" action="/subscribe/">
-              <div class="row text center">
-                <div class="input-field col s12">
-                  <input placeholder="Enter your email here" id="email" type="email" class="validate" autocomplete="off" value=''>
-                </div>
-                <div id="message"></div>
+                <form method="POST" id="collect-email" action="/subscribe/">
+                  <div class="row text center">
+                    <div class="input-field col s12">
+                      <input placeholder="Enter your email here" id="email" type="email" class="validate" autocomplete="off" value=''>
+                    </div>
+                    <div id="message"></div>
+                  </div>
+                  <input type="submit" class="red btn cta-element"></input>
+                </form>
+              
               </div>
-              <input type="submit" class="red btn cta-element"></input>
-            </form>
-          
-          </div>
-        <div class="row">
-            
+            <div class="row nomargin" id="message">
+                
+            </div>
         </div>
     </div>
 </section>
@@ -64,11 +66,11 @@ $(document).ready(function() {
                 type: $(this).attr('method'), // GET or POST
                 url: $(this).attr('action'), // the file to call,
                 success: function(response){
-                     //$('#message').html("<h3>Subscribed!</h3>") 
+                     $('#message').html("<h3>Subscribed!</h3>") 
                      console.log(response)
                  }
             });
-            return false; //<---- move it here
+            return false;
        });
 
 });
