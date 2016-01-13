@@ -18,60 +18,42 @@
     <!-- Materialize CSS Framework | Custom CSS -->
     <link href="{% static 'frontend/css/custom.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
-
+<body>
+<!--Fixed Navbar Menu-->
+<div class="navbar-fixed">
+    <nav id="navbar" class="transparent noshadow">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo"><img class="navbarlogo" src="{% static 'frontend/img/logo.png' %}"></img></a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="authentication/login/">Log in</a></li>
+                <li><a class="cta" href="authentication/register/">Create a new crrency</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="authentication/login/">Log in</a></li>
+                <li><a href="authentication/register/">Create a new crrency</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
 <!--Landing Page Content-->
-
 <section class="blue fullpage" id="CTA">
-    <div class="row center ycenter box">
+    <div class="row center ycenter">
         <h1 class="text nomargin cta-element" style="font-weight: bold">Use your own currency!</h1>
         <h5 class="text cta-element">World’s first platform for truly transparent economic networks</h5>
-          <div class="row emailmargin">
-            
-
-            <form method="POST" id="collect-email" action="/subscribe/">
-              <div class="row text center">
-                <div class="input-field col s12">
-                  <input placeholder="Enter your email here" id="email" type="email" class="validate" autocomplete="off" value=''>
-                </div>
-                <div id="message">lkmlkm</div>
-              </div>
-              <input type="submit" class="red btn cta-element"></input>
-            </form>
-          
-          </div>
-        <div class="row">
-            
-        </div>
+        <a href="#" class="red btn cta-element">Notify me!</a>
     </div>
 </section>
-
 <!--  Scripts-->
-
 <!-- jQuery Library -->
 <script src="{% static 'frontend/js/jquery-2.1.1.min.js' %}"></script>
 <!-- Materialize.js -->
 <script src="{% static 'frontend/js/materialize.js' %}"></script>
 <!-- Materialize.js Initialization -->
-<script src="{% static 'frontend/js/initforsubscription.js' %}" type="text/javascript"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-    $("#collect-email").submit(function(){
-            var email = $("#email").val();
-            var email_data = {"email": email};
-            console.log(email_data);
-            $.ajax({
-                data: email_data, // get the form data
-                type: $(this).attr('method'), // GET or POST
-                url: $(this).attr('action'), // the file to call,
-                success: function(response){
-                     //$('#message').html("<h3>Subscribed!</h3>") 
-                     console.log(response)
-                 }
-            });
-            return false; //<---- move it here
-       });
-
-});
-</script>
+<script src="{% static 'frontend/js/init.js' %}" type="text/javascript"></script>
 </body>
 </html>
