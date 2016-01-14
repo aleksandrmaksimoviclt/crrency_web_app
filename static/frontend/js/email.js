@@ -15,17 +15,17 @@ $(document).ready(function() {
             return false;
        });
 
-  	$('#submit').attr('disabled',true);
-		    $('#email').keyup(function(){
-		        if($(this).val().length !=0)
-		            $('#submit').attr('disabled', false);            
-		        else
-		            $('#submit').attr('disabled',true);
-		    });
+    $('#submit').attr('disabled',true);
+            $('#email').keyup(function(){
+                if($(this).val().length !=0)
+                    $('#submit').attr('disabled', false);            
+                else
+                    $('#submit').attr('disabled',true);
+            });
 
     $('#submit').click(function(){
-		$('#message').fadeTo("slow" , 1, function() {
-	    	$('#message').delay(3000).fadeTo( "slow" , 0)
-			});
-  	});
+        $('#message').fadeTo("slow" , 1, function() {
+            $('#message').delay(3000).fadeTo( "slow" , 0)
+            });
+    });
 });
