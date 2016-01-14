@@ -145,6 +145,26 @@ background-image: linear-gradient(to left, #3498DB 0%, #E74D3C 100%);
     height:100vh;
 }
 
+.coverimg{
+    background: url(../img/background-min.jpg) no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover; 
+    }
+
+.blacktint {
+    background: rgba(0,0,0,0.15);
+    height: inherit;
+}
+
+.textshadow{
+    text-shadow: 0px 1px 4px rgba(0,0,0,.4);
+    -webkit-text-stroke: 0px 1px 4px rgba(0,0,0,.4);
+    -moz-text-stroke: 0px 1px 4px rgba(0,0,0,.4);
+    -ms-text-stroke: 0px 1px 4px rgba(0,0,0,.4);
+    -o-text-stroke: 0px 1px 4px rgba(0,0,0,.4);
+}
 .no_mobile_container{
     width:90%;
 }
@@ -208,4 +228,3 @@ background-image: linear-gradient(to left, #3498DB 0%, #E74D3C 100%);
     color: #ECF0F1;
     opacity: 0.8;
 }
-
