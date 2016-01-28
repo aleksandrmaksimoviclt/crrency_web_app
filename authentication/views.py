@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, render_to_response
 from django.core.context_processors import csrf
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import auth
-from .linkedin import login as linkedin_login
+from .linkedin import Linkedin
 from .register import register as new_user
 from .register import user_activate
 
@@ -39,4 +39,10 @@ def basic(request):
         return HttpResponseRedirect('/authentication/login')
 
 def linkedin(request):
-    linkedin_login()
+    auth_url = Linkedin.login()
+    return redirect(auth_url)
+
+def check_redirect_response(request, code):
+    redirect_response = request.build_absolute_uri()
+    content = Linkedin.linkedin_fetch(redirect_response)
+    return HttpResponse('200 yra OK!')
