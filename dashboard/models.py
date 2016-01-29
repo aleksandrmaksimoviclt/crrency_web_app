@@ -30,6 +30,7 @@ class Currency(models.Model):
     total = models.FloatField(default=0)
     created = models.DateTimeField(editable=False, null=True)
     modified = models.DateTimeField(null=True)
+    # members = models.ForeignKey(NetworkMembers)
 
     def save(self, *args, **kwargs):
         if not self.id:
@@ -47,10 +48,14 @@ class Balance(models.Model):
     amount = models.FloatField(default=0)
     currency = models.ForeignKey(Currency)
 
+
     def __str__(self):
         return "Total balance: %s %s" % (self.amount, self.currency)
 
-
+'''class BalanceHistory(models.Model):
+    balance = models.ForeignKey(Balance)
+    timestamp = models.DateTimeField(auto_now=True)
+'''
 class Transaction(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     time = models.DateTimeField(editable=False)
@@ -63,3 +68,5 @@ class Transaction(models.Model):
         if not self.id:
             self.time = timezone.now()
         return super(Transaction, self).save(*args, **kwargs)
+
+
