@@ -1,10 +1,14 @@
+
 from django.shortcuts import render, redirect, render_to_response
 from django.core.context_processors import csrf
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import auth
+from django.views.generic import View
+
 from .linkedin import Linkedin
 from .register import register as new_user
 from .register import user_activate
+from .social_auth_tokens import tokens
 
 
 
@@ -38,11 +42,21 @@ def basic(request):
     else:
         return HttpResponseRedirect('/authentication/login')
 
+#class LinkedinView
+
 def linkedin(request):
-    auth_url = Linkedin.login()
-    return redirect(auth_url)
+    linkedin = Linkedin(tokens)
+    linkedin.login()
+    url = linkedin.authorization_url
+    return redirect(url)
 
 def check_redirect_response(request, code):
     redirect_response = request.build_absolute_uri()
-    content = Linkedin.linkedin_fetch(redirect_response)
-    return HttpResponse('200 yra OK!')
+    linkedin = Linkedin(tokens)
+    login, passwd = linkedin.linkedin_fetch(redirect_response)
+    if login and passwd:
+        user = auth.authenticate(username=login, password=passwd)
+        auth.login(request, user)
+        return HttpResponseRedirect('/dashboard/')
+    else:
+        HttpResponse('401')

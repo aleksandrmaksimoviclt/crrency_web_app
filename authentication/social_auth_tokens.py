@@ -3,7 +3,7 @@
 
 tokens = {
     'linkedin': {
-        'cient_id': '77zdi1zo7xqmyv',
+        'client_id': '77zdi1zo7xqmyv',
         'client_secret': 'mrQZZaFyBBPwREda',
     },
     'facebook': {
@@ -13,4 +13,4 @@ tokens = {
         'token_url': '',
         'redirect_url': '',
     },  
-}
+} 

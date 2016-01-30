@@ -89,13 +89,17 @@ WSGI_APPLICATION = 'crrency.wsgi.application'
 # }
 
 # Parse database configuration from $DATABASE_URL
-import dj_database_url
+try:
+    import dj_database_url
+    DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
+except ImportError:
+    pass
+
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
-
+SECURE_SSL_REDIRECT = True # redirect http to https
 
 
 # Password validation
@@ -143,7 +147,7 @@ STATICFILES_DIRS = (
 )
 
 ADMIN_MEDIA_PREFIX = '/static/admin/'
-
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 #email tests
 EMAIL_USE_TLS = True
