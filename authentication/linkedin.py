@@ -4,8 +4,8 @@ from requests_oauthlib.compliance_fixes import linkedin_compliance_fix
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from .models import LinkedinUser
 
+from .models import LinkedinUser
 from .social_auth_tokens import tokens
 
 
@@ -24,7 +24,7 @@ class Linkedin(object):
 
     @property
     def linkedin(self):
-        linkedin = OAuth2Session(self.client_id, redirect_uri='http://localhost:8000/auth/linkedin/check_response/')
+        linkedin = OAuth2Session(self.client_id, redirect_uri=self.redirect_url)
         linkedin = linkedin_compliance_fix(linkedin)
         self._linkedin = linkedin
         return self._linkedin

@@ -10,5 +10,7 @@ urlpatterns = [
     url(r'^user/(?P<user_id>\d+)/activate/$', views.activate, name='activate'),
 #social auth
     url(r'^linkedin/$', views.linkedin, name='linkedin'),
-    url(r'^linkedin/check_response/(?P<code>\w*)$', views.check_redirect_response, name='check_linkedin_response'),
+    url(r'^linkedin/check_response/(?P<code>\w*)$', views.linkedin_response_check, name='check_linkedin_response'),
+    url(r'^facebook/$', views.facebook, name='facebook'),
+    url(r'^facebook/check_response/(?P<code>\w*)$', views.facebook_response_check, name='check_facebook_response'),
 ]
