@@ -1,15 +1,18 @@
 $(window).load(function(){
+/*
     whotransactsresize();
-    
-    $('ul.tabs').tabs('select_tab', 'timeline');
-   
     $(window).resize(whotransactsresize);
-
-    $(window).scroll(navbardepth);
-    
     $('#home').click(function(){
         whotransactsresize();
     });
+*/
+    $('ul.tabs').tabs('select_tab', 'timeline');
+   
+    
+
+    $(window).scroll(navbardepth);
+    
+    
 
    
 });
