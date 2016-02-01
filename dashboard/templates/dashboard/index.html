@@ -44,17 +44,18 @@
         </div>
       </div>
     </div>
-  </div>
+</div>
+
 <!--Navigation Tabs Open-->
 <section class="darkblue fixed" style="width:100%; height:96px; z-index:8000;" id="navigation-tabs">
-		<div class="container row nomargin center logo-header">
+		<div class="container center logo-header">
 			<img class="logo" src="{% static 'dashboard/img/logo.png' %}">
 		</div>
 		
 		<div class="row">
 			<div class="container">
 				<div class="s12">
-				  <ul class="tabs darkblue">
+				  <ul class="tabs darkblue preloading" id="tabs">
 				    <li class="tab col-5th"><a id="home" href="#timeline"><i class="material-icons line-height-inherit themewhite-text">home</i></a></li>
 				    <li class="tab col-5th"><a href="#profile"><i class="material-icons line-height-inherit themewhite-text">person</i></a></li>
 				    <li class="tab col-5th"><a href="#people"><i class="material-icons line-height-inherit themewhite-text">people</i></a></li>
@@ -69,48 +70,26 @@
 
 <!-- Tabs Content Open-->
 
-<section style="padding-top: 96px;" id="tabs-content">
+<section class="hide" style="padding-top: 96px;" id="tabs-content">
 	<div id="timeline" class="col s12">
 		<div class="row-feed black-text post white z-depth-1">
-			<div class="col s12 row nomargin">
+			<div class="col s12 row nomargin post-head">
 				<span class="feed-name2">Simonas Zilinskas <i class="material-icons md-14 line-height-inherit vertical-allign-bottom">keyboard_arrow_right</i> Lukas Dambrauskas</span>
-				<span class="feed-name2 sub right"><i class="material-icons md-14  line-height-inherit vertical-allign-bottom">attach_money</i>500.00</span>
+				<span class="feed-name2 sub right">500.00</span>
 			</div>
 			<div class="">
 				<img class="post-image" src="{% static "dashboard/img/1.jpg" %}" alt="Image"/></br>				
 			</div>
-			&nbsp;
-			<span class="feed-name2 sub right"><i class="material-icons md-14 line-height-inherit vertical-allign-bottom">access_time</i> 1 min ago</span>
-		</div>
-
-		<div class="row-feed black-text post white z-depth-1">
-			<div class="col s12 row nomargin">
-				<span class="feed-name2">Simonas Zilinskas <i class="material-icons md-14 line-height-inherit vertical-allign-bottom">keyboard_arrow_right</i> Lukas Dambrauskas</span>
-				<span class="feed-name2 sub right"><i class="material-icons md-14  line-height-inherit vertical-allign-bottom">attach_money</i>500.00</span>
+			<div class="post-foot">
+				<span class="feed-name2 sub right"><i class="material-icons md-14 line-height-inherit vertical-allign-bottom">access_time</i> 1 min ago</span>
 			</div>
-			<div class="">
-				<img class="post-image" src="{% static "dashboard/img/2.jpg" %}" alt="Image"/></br>				
-			</div>
-			&nbsp;
-			<span class="feed-name2 sub right"><i class="material-icons md-14 line-height-inherit vertical-allign-bottom">access_time</i> 1 min ago</span>
-		</div>
-
-		<div class="row-feed black-text post white z-depth-1">
-			<div class="col s12 row nomargin">
-				<span class="feed-name2">Simonas Zilinskas <i class="material-icons md-14 line-height-inherit vertical-allign-bottom">keyboard_arrow_right</i> Lukas Dambrauskas</span>
-				<span class="feed-name2 sub right"><i class="material-icons md-14  line-height-inherit vertical-allign-bottom">attach_money</i>500.00</span>
-			</div>
-			<div class="">
-				<img class="post-image" src="{% static "dashboard/img/3.jpg" %}" alt="Image"/></br>				
-			</div>
-			&nbsp;
-			<span class="feed-name2 sub right"><i class="material-icons md-14 line-height-inherit vertical-allign-bottom">access_time</i> 1 min ago</span>
+			
 		</div>
 		
 	</div>
 	<div id="profile" class="col s12">
 		<div class="row-feed black-text post white z-depth-1">
-			<div class="col s12 nopadding">
+			<div class="col s12 nopadding whotransact">
 				<div class="col s12 center">
 					<img class="sender rounded profile-image " src="{% static "dashboard/img/simas.jpg" %}" alt="Sender"/></br>
 					<span class="profile-name">Simonas Zilinkas</span></br>
@@ -127,41 +106,6 @@
 			</div>
 		</div>
 
-		<div class="row-feed black-text post white z-depth-1">
-			<div class="col s12 row nomargin">
-				<span class="feed-name2">Simonas Zilinskas <i class="material-icons md-14 line-height-inherit vertical-allign-bottom">keyboard_arrow_right</i> Lukas Dambrauskas</span>
-				<span class="feed-name2 sub right"><i class="material-icons md-14  line-height-inherit vertical-allign-bottom">attach_money</i>500.00</span>
-			</div>
-			<div class="">
-				<img class="post-image" src="{% static "dashboard/img/1.jpg" %}" alt="Image"/></br>				
-			</div>
-			&nbsp;
-			<span class="feed-name2 sub right"><i class="material-icons md-14 line-height-inherit vertical-allign-bottom">access_time</i> 1 min ago</span>
-		</div>
-
-		<div class="row-feed black-text post white z-depth-1">
-			<div class="col s12 row nomargin">
-				<span class="feed-name2">Eimantas Matulaitis <i class="material-icons md-14 line-height-inherit vertical-allign-bottom">keyboard_arrow_right</i> Lukas Dambrauskas</span>
-				<span class="feed-name2 sub right"><i class="material-icons md-14  line-height-inherit vertical-allign-bottom">attach_money</i>4999.99</span>
-			</div>
-			<div class="">
-				<img class="post-image" src="{% static "dashboard/img/2.jpg" %}" alt="Image"/></br>				
-			</div>
-			&nbsp;
-			<span class="feed-name2 sub right"><i class="material-icons md-14 line-height-inherit vertical-allign-bottom">access_time</i> 1 min ago</span>
-		</div>
-
-		<div class="row-feed black-text post white z-depth-1">
-			<div class="col s12 row nomargin">
-				<span class="feed-name2">Simonas Zilinskas <i class="material-icons md-14 line-height-inherit vertical-allign-bottom">keyboard_arrow_right</i> Lukas Dambrauskas</span>
-				<span class="feed-name2 sub right"><i class="material-icons md-14  line-height-inherit vertical-allign-bottom">attach_money</i>500.00</span>
-			</div>
-			<div class="">
-				<img class="post-image" src="{% static "dashboard/img/3.jpg" %}" alt="Image"/></br>				
-			</div>
-			&nbsp;
-			<span class="feed-name2 sub right"><i class="material-icons md-14 line-height-inherit vertical-allign-bottom">access_time</i> 1 min ago</span>
-		</div>
 
 	</div>
 
