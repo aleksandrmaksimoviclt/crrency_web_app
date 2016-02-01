@@ -1,9 +1,17 @@
 $(window).load(function(){
+    whotransactsresize();
+    
     $('ul.tabs').tabs('select_tab', 'timeline');
-   	whotransactsresize();
+   
     $(window).resize(whotransactsresize);
+
     $(window).scroll(navbardepth);
     
+    $('#home').click(function(){
+        whotransactsresize();
+    });
+
+   
 });
 
 whotransactsresize = function(){
@@ -18,15 +26,10 @@ whotransactsresize = function(){
 	};
 
 navbardepth = function(){
-	
     if ($(window).scrollTop() > 0){
         $('#navigation-tabs').addClass("z-depth-2");
-
-        
     }
     else {
-        $('#navigation-tabs').removeClass("z-depth-2");
-        
-    }
-    	
+        $('#navigation-tabs').removeClass("z-depth-2");   
+    }	
 };
