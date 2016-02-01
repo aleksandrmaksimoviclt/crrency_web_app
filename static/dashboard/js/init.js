@@ -30,9 +30,9 @@ whotransactsresize = function(){
 
 navbardepth = function(){
     if ($(window).scrollTop() > 0){
-        $('#navigation-tabs').addClass("z-depth-2");
+        $('#navigation-tabs').addClass("z-depth-3");
     }
     else {
-        $('#navigation-tabs').removeClass("z-depth-2");   
+        $('#navigation-tabs').removeClass("z-depth-3");   
     }	
 };
