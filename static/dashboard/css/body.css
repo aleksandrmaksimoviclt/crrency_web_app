@@ -52,8 +52,9 @@ body{overflow: visible !important;background-color: #2C3E50;}
 
 /* Header */
 
-.logo-header{width:inherit;}
-img.logo {padding: 10px 0px 0px 0px;height: 42px;}
+.logo-header{width:inherit; height:40px;}
+img.logo {padding-top: 10px;height: 100%;}
+.tabs {height: 40px;}
 
 .col-5th{width: 20% !important;margin-left: auto;left: auto;right: auto;}
 
