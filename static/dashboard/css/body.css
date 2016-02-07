@@ -19,6 +19,8 @@ img#avatar{/*width: 100%;*/	height:90px;}
 .text{color: rgba(255,255,255,0.9); transition: color .28s ease;}
 .transparent{background-color:rgba(255, 255, 255, 0);}
 .noshadow{box-shadow: 0px 0px 0px 0px;}
+.row2{margin-left: auto; margin-right: auto;}
+.x-large {font-size: x-large;}
 
 
 /* Color Pallette */

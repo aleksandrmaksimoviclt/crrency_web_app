@@ -6,7 +6,7 @@ $(window).load(function(){
         whotransactsresize();
     });
 */
-    $('ul.tabs').tabs('select_tab', 'settings');
+    $('ul.tabs').tabs('select_tab', 'people');
    
     
 
