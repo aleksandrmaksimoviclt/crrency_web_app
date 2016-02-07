@@ -6,7 +6,7 @@ $(window).load(function(){
         whotransactsresize();
     });
 */
-    $('ul.tabs').tabs('select_tab', 'timeline');
+    $('ul.tabs').tabs('select_tab', 'settings');
    
     
 
@@ -36,3 +36,26 @@ navbardepth = function(){
         $('#navigation-tabs').removeClass("z-depth-3");   
     }	
 };
+
+/* TODO Do action while scroll */
+/*
+
+$(function() {
+
+    var timer, el = $('body'),
+        flag = false;
+    $(window).scroll(function() {
+        if (!flag) {
+            flag = true;
+            el.addClass('scrolling');
+        }
+        clearTimeout(timer);
+        timer = setTimeout(function() {
+            el.removeClass('scrolling');
+            flag = false;
+        }, 200);
+    });
+
+});
+
+*/

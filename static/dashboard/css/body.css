@@ -56,7 +56,7 @@ body{overflow: visible !important;background-color: #2C3E50;}
 
 .logo-header{width:inherit; height:40px;}
 img.logo {padding-top: 10px;height: 100%;}
-.tabs {height: 40px;}
+.tabs {height: 48px;}
 
 .col-5th{width: 20% !important;margin-left: auto;left: auto;right: auto;}
 
@@ -80,3 +80,5 @@ img.logo {padding-top: 10px;height: 100%;}
     margin: 0 auto;
 }
 
+.tabs .indicator { display: none; }
+.tabs .tab a.active { border-bottom: 2px solid #ECF0F1; }
