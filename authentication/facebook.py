@@ -39,7 +39,7 @@ class Facebook(object):
             client_secret=self.client_secret,
             authorization_response=redirect_response)
         response = self.facebook.get('https://graph.facebook.com/me?access_token=%s' % token['access_token'])
-        if response.status_code == '400':
+        if response.status_code == 400:
             return False, False
         content = response.json()
         try:

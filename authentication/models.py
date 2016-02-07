@@ -8,7 +8,7 @@ class LinkedinUser(models.Model):
     access_token = models.CharField(max_length=200)
 
     def __str__(self):
-        return 'l_user'
+        return '%s' % user.id
 
 
 class FacebookUser(models.Model):
@@ -16,4 +16,11 @@ class FacebookUser(models.Model):
     access_token = models.CharField(max_length=300)
 
     def __str__(self):
-        return 'fb_user'
+        return '%s' % user.id
+
+class GoogleUser(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL)
+    access_token = models.CharField(max_length=300)
+
+    def __str__(self):
+        return '%s' % user.id

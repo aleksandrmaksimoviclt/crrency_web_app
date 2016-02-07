@@ -1,13 +1,9 @@
 #!/usr/bin/env python
 from requests_oauthlib import OAuth2Session
 from requests_oauthlib.compliance_fixes import linkedin_compliance_fix
-from django.http import HttpResponse
-from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 
 from .models import LinkedinUser
-from .social_auth_tokens import tokens
-
 
 
 class Linkedin(object):
@@ -40,7 +36,7 @@ class Linkedin(object):
     def linkedin_fetch(self, redirect_response):
         token = self.linkedin.fetch_token(token_url=self.token_url, client_secret=self.client_secret, authorization_response=redirect_response)
         response = self.linkedin.get('https://api.linkedin.com/v1/people/~?oauth2_access_token=%s&format=json' % token['access_token'])
-        if response.status_code == '401':
+        if response.status_code == 401:
             return False, False
         content = response.json()
         try:
@@ -64,7 +60,3 @@ class Linkedin(object):
             LinkedinUser.objects.create(user=user, access_token=token['access_token'])
             token = token['access_token']
         return identifier, token
-
-
-if __name__ == '__main__':
-    Linkedin(tokens).login()

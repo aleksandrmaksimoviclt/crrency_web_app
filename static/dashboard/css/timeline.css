@@ -1,0 +1,33 @@
+/* Crrency web app */
+.post {padding: 10px;}
+.row-feed {margin-left: auto;margin-right: auto;margin: 10px;}
+span.feed-name2 {color: #444;}
+span.feed-name2.sub {color: #9e9e9e;font-size: small;}
+span.feed-name2.sub.time {line-height: inherit;}
+img.post-image {width: 100%;padding: 10px 0px 10px 0px;}
+.feed_image {height: 60px;}
+div#timeline {max-width: 1280px;margin: 0 auto;}
+/*.post-head{height: 25px;}*/
+.post-foot{height: 25px;}
+
+
+
+
+@media only screen and (min-width: 768px) {
+    .post {padding: 15px;} 
+    .row-feed {margin: 60px;}
+    img.post-image {padding: 15px 0px 15px 0px;}
+    /*.post-head{height: 50px;}*/
+    .post-foot{height: 50px;}
+}
+
+@media only screen and (max-width: 600px) { 
+    img.post-image {padding: 10px 0px 10px 0px;}
+    /*.post-head{height: 20px;}*/
+    .post-foot{height: 20px;}
+    .row-feed {margin: 20px;}
+}
+
+@media only screen and (max-width: 400px) { 
+    .chip {font-size: 12px;}
+}

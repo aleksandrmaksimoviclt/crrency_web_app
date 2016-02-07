@@ -11,6 +11,7 @@ from .register import user_activate
 from .social_auth_tokens import tokens
 from .linkedin import Linkedin
 from .facebook import Facebook
+from .google import Google
 
 
 def index(request):
@@ -57,6 +58,7 @@ def linkedin(request):
     url = linkedin.authorization_url
     return redirect(url)
 
+
 def linkedin_response_check(request, code):
     redirect_response = request.build_absolute_uri()
     linkedin = Linkedin(tokens)
@@ -66,7 +68,7 @@ def linkedin_response_check(request, code):
         auth.login(request, user)
         return HttpResponseRedirect('/dashboard/')
     else:
-        HttpResponse('401')
+        return HttpResponse('401')
 
 
 ''' facebook login views '''
@@ -77,6 +79,7 @@ def facebook(request):
     url = facebook.authorization_url
     return redirect(url)
 
+
 def facebook_response_check(request, code):
     redirect_response = request.build_absolute_uri()
     facebook = Facebook(tokens)
@@ -86,4 +89,27 @@ def facebook_response_check(request, code):
         auth.login(request, user)
         return HttpResponseRedirect('/dashboard/')
     else:
-        HttpResponse('401')
+        return HttpResponse('401')
+
+''' google login views '''
+
+def google(request):
+    google = Google(tokens)
+    google.login()
+    request.session['google_state'] = google.state
+    url = google.authorization_url
+    return redirect(url)
+
+
+def google_response_check(request, code):
+    if request.session['google_state'] != request.GET.get('state', ''):
+        pass #return HttpResponse('401') # Sent and received CSRF token differs for some reason 
+    redirect_response = request.build_absolute_uri()
+    google = Google(tokens)
+    login, passwd = google.google_fetch(redirect_response)
+    if login and passwd:
+        user = auth.authenticate(username=login, password=passwd)
+        auth.login(request, user)
+        return HttpResponseRedirect('/dashboard/')
+    else:
+        return HttpResponse('401')

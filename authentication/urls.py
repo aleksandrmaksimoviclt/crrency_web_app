@@ -13,4 +13,6 @@ urlpatterns = [
     url(r'^linkedin/check_response/(?P<code>\w*)$', views.linkedin_response_check, name='check_linkedin_response'),
     url(r'^facebook/$', views.facebook, name='facebook'),
     url(r'^facebook/check_response/(?P<code>\w*)$', views.facebook_response_check, name='check_facebook_response'),
+    url(r'^google/$', views.google, name='google'),
+    url(r'^google/check_response/(?P<code>\w*)$', views.google_response_check, name='check_google_response'),
 ]

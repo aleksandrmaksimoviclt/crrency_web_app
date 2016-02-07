@@ -1,4 +1,6 @@
-$(window).load(function(){
+$(function(){
 	$("#preloader").addClass("hide");
-	$("#content").removeClass("hide");
+	$("#tabs-content").removeClass("hide");
+	$("#tabs,#tabs-content").removeClass("preloading");
+	$("#tabs,#tabs-content").addClass("preloaded");
 });
