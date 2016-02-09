@@ -24,6 +24,8 @@ $(document).ready(function() {
                     $('#message').html("Subscribed!")
                     $('#email').val('');
                     $('#submit').attr('disabled',true);
+                    $('#landing').addClass('hide');
+                    $('#socialblock').removeClass('hide');
                 }
             });
             return false;
@@ -42,6 +44,11 @@ $(document).ready(function() {
             $('#message').delay(3000).fadeTo( "slow" , 0)
             });
     });
-    
+
+    $('#submit').click(function(){
+        $('#message').fadeTo("slow" , 1, function() {
+            $('#message').delay(3000).fadeTo( "slow" , 0)
+            });
+    });
 
 });

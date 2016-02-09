@@ -181,6 +181,7 @@ background-size: cover;
 
 .box{
     max-width: 680px;
+    padding: 10px;
 }
 
 
@@ -227,4 +228,24 @@ background-size: cover;
 :placeholder-shown {
     color: #ECF0F1;
     opacity: 0.8;
+}
+
+.socialBlock{
+
+}
+
+img.fb {
+    height: 32px;
+    margin: 0px 10px 0px 10px;
+}
+
+.congrats {
+    font-size: -webkit-xxx-large;
+}
+
+.congrats2 {
+    font-size: xx-large;
+}
+.congrats3 {
+    font-size: large;
 }
