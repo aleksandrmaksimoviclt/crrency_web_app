@@ -67,13 +67,29 @@
 <script src="{% static 'frontend/js/materialize.js' %}"></script>
 <!-- Materialize.js Initialization -->
 <script src="{% static 'frontend/js/initforsubscription.js' %}" type="text/javascript"></script>
-<!-- Email Form Handling -->
-<script src="{% static 'frontend/js/email.js' %}" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#collect-email").submit(function(){
+            var email = $("#email").val();
+            var email_data = {"email": email};
+            console.log(email_data);
+            $.ajax({
+                data: email_data, // get the form data
+                type: $(this).attr('method'), // GET or POST
+                url: $(this).attr('action'), // the file to call,
+                success: function(response){
+                     $('#message').html("<h3>Subscribed!</h3>") 
+                     console.log(response)
+                },
+                error: function(response){
+                     $('#message').html("<h3>Ehoops!</h3>") 
+                     console.log(response)
+                }
+            });
+            return false;
+       });
+
+});
+</script>
 </body>
 </html>
-
-
-
-
-
-
