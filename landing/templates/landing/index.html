@@ -24,38 +24,27 @@
 
 <section class="fullpage coverimg" id="CTA">
     <div class="blacktint">
+        <div class="row center ycenter box">
+            <h1 class="text nomargin cta-element textshadow" style="font-weight: bold">Use your own currency!</h1>
+            <h5 class="text cta-element textshadow">World’s first platform for truly transparent economic networks</h5>
+              <div class="row emailmargin">
+                
 
-      <div class="row center ycenter box">
-        
-        <div id="landing">
-          <!--<img class="fb" src="{% static 'frontend/img/crrency_logo.png' %}">-->
-          <h1 class="text nomargin cta-element textshadow" style="font-weight: bold">Use your own currency!</h1>
-          <h5 class="text cta-element textshadow">World’s first platform for truly transparent economic networks</h5>
-            <div class="row emailmargin">
-              <form method="POST" id="collect-email" action="/subscribe/">
-                <div class="row text center">
-                  <div class="input-field col s12">
-                    <input placeholder="Enter your email here" id="email" type="email" class="validate" autocomplete="off" required value=''>
+                <form method="POST" id="collect-email" action="/subscribe/">
+                  <div class="row text center">
+                    <div class="input-field col s12">
+                      <input placeholder="Enter your email here" id="email" type="email" class="validate" autocomplete="off" value=''>
+                    </div>
+                    <div id="message"></div>
                   </div>
-                  <div class="row nomargin" id="message">&nbsp;
-                </div>
-                <input id="submit" value="Subscribe" type="submit" class="red btn cta-element"></input>
-              </form>
+                  <input type="submit" class="red btn cta-element"></input>
+                </form>
+              
+              </div>
+            <div class="row nomargin" id="message">
+                
             </div>
-          </div>
-
         </div>
-
-      </div>
-
-      <div class="socialBlock row center ycenter box hide" id="socialblock">
-
-        <span class="text textshadow congrats">Thanks for subscribing!</span></br>
-        <span class="text textshadow congrats2">We will keep you updated on our progress</span></br></br>
-        <span class="text textshadow congrats3">Now you can click on icon below and visit our Facebook page.</span></br>
-        <a href="https://www.facebook.com/Crrency/" target="_blank"><img class="fb" src="{% static 'frontend/img/fb_logo_white.png' %}"></a> 
-      </div>
-
     </div>
 </section>
 
@@ -67,13 +56,29 @@
 <script src="{% static 'frontend/js/materialize.js' %}"></script>
 <!-- Materialize.js Initialization -->
 <script src="{% static 'frontend/js/initforsubscription.js' %}" type="text/javascript"></script>
-<!-- Email Form Handling -->
-<script src="{% static 'frontend/js/email.js' %}" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#collect-email").submit(function(){
+            var email = $("#email").val();
+            var email_data = {"email": email};
+            console.log(email_data);
+            $.ajax({
+                data: email_data, // get the form data
+                type: $(this).attr('method'), // GET or POST
+                url: $(this).attr('action'), // the file to call,
+                success: function(response){
+                     $('#message').html("<h3>Subscribed!</h3>") 
+                     console.log(response)
+                },
+                error: function(response){
+                     $('#message').html("<h3>Ehoops!</h3>") 
+                     console.log(response)
+                }
+            });
+            return false;
+       });
+
+});
+</script>
 </body>
 </html>
-
-
-
-
-
-
