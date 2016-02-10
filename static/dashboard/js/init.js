@@ -12,8 +12,7 @@ $(window).load(function(){
 
     $(window).scroll(navbardepth);
     
-    
-
+    $(".button-collapse").sideNav();
    
 });
 
