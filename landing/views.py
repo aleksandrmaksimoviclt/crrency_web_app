@@ -26,3 +26,7 @@ def subscribe(request):
     except Exception as e:
         return HttpResponse('Something went wrong')
 
+def thankyou(request):
+    members = TeamMember.objects.all()
+    info = Info.objects.all()
+    return render(request, 'landing/thank-you.html', {})

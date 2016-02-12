@@ -21,11 +21,12 @@ $(document).ready(function() {
                 type: $(this).attr('method'),
                 url: $(this).attr('action'),
                 success: function(response){
-                    $('#message').html("Subscribed!")
-                    $('#email').val('');
                     $('#submit').attr('disabled',true);
+                    $(location).attr('href', '/thankyou');
+                    /*$('#message').html("Subscribed!")
+                    $('#email').val('');
                     $('#landing').addClass('hide');
-                    $('#socialblock').removeClass('hide');
+                    $('#socialblock').removeClass('hide');*/
                 }
             });
             return false;
