@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'authentication.apps.AuthenticationConfig',
     'dashboard.apps.DashboardConfig',
     'landing.apps.LandingConfig',
+    'transaction.apps.TransactionConfig',
     
     #pip installed apps
     'django_extensions',

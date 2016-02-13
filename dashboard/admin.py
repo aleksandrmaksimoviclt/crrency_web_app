@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Profile, Currency, Balance, Transaction
+from .models import Profile, Balance
+from transaction.models import Transaction, Currency
 # Register your models here.
 admin.site.register(Profile)
 admin.site.register(Currency)

@@ -15,6 +15,7 @@ class Linkedin(object):
         self.auth_base_url = 'https://www.linkedin.com/uas/oauth2/authorization'
         self.token_url = 'https://www.linkedin.com/uas/oauth2/accessToken'
         self.redirect_url = 'http://localhost:8000/auth/linkedin/check_response/'
+        self.redirect_url = 'http://192.168.5.20:8000/auth/linkedin/check_response/'
         self._authorization_url = None
         self._linkedin = None
 
@@ -48,7 +49,9 @@ class Linkedin(object):
         identifier = content['id']
         try:
             user = User.objects.get(username=identifier)
-            token = LinkedinUser.objects.get(user=user).access_token
+            old_token = LinkedinUser.objects.get(user=user).access_token
+            if old_token == token['access_token']:
+                pass
         except User.DoesNotExist:
             user = User.objects.create_user(
                 identifier,

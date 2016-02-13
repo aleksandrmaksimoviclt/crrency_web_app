@@ -4,6 +4,8 @@ from django.db import models
 from django.conf import settings
 from django.utils import timezone
 
+from transaction.models import Currency
+
 
 class Profile(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -21,25 +23,7 @@ class Profile(models.Model):
         return super(Profile, self).save(*args, **kwargs)
 
     def __str__(self):
-        return self.surname
-
-
-class Currency(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=100)
-    total = models.FloatField(default=0)
-    created = models.DateTimeField(editable=False, null=True)
-    modified = models.DateTimeField(null=True)
-    # members = models.ForeignKey(NetworkMembers)
-
-    def save(self, *args, **kwargs):
-        if not self.id:
-            self.created = timezone.now()
-        self.modified = timezone.now()
-        return super(Currency, self).save(*args, **kwargs)
-
-    def __str__(self):
-        return self.name
+        return '%s %s' % (self.surname, self.name)
 
 
 class Balance(models.Model):
@@ -50,23 +34,12 @@ class Balance(models.Model):
 
 
     def __str__(self):
-        return "Total balance: %s %s" % (self.amount, self.currency)
+        return "%s's Total balance: %s %s" % (self.user, self.amount, self.currency)
 
 '''class BalanceHistory(models.Model):
     balance = models.ForeignKey(Balance)
     timestamp = models.DateTimeField(auto_now=True)
 '''
-class Transaction(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    time = models.DateTimeField(editable=False)
-    sender = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='sender')
-    recipient = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='recipient')
-    amount = models.FloatField()
-    currency = models.ForeignKey(Currency)
 
-    def save(self, *args, **kwargs):
-        if not self.id:
-            self.time = timezone.now()
-        return super(Transaction, self).save(*args, **kwargs)
 
 
