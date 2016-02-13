@@ -1,9 +1,19 @@
 $(window).load(function(){
-    $('ul.tabs').tabs('select_tab', 'timeline');
-   	whotransactsresize();
+/*
+    whotransactsresize();
     $(window).resize(whotransactsresize);
+    $('#home').click(function(){
+        whotransactsresize();
+    });
+*/
+    $('ul.tabs').tabs('select_tab', 'people');
+   
+    
+
     $(window).scroll(navbardepth);
     
+    $(".button-collapse").sideNav();
+   
 });
 
 whotransactsresize = function(){
@@ -18,15 +28,33 @@ whotransactsresize = function(){
 	};
 
 navbardepth = function(){
-	
     if ($(window).scrollTop() > 0){
-        $('#navigation-tabs').addClass("z-depth-2");
-
-        
+        $('#navigation-tabs').addClass("z-depth-3");
     }
     else {
-        $('#navigation-tabs').removeClass("z-depth-2");
-        
-    }
-    	
+        $('#navigation-tabs').removeClass("z-depth-3");   
+    }	
 };
+
+/* TODO Do action while scroll */
+/*
+
+$(function() {
+
+    var timer, el = $('body'),
+        flag = false;
+    $(window).scroll(function() {
+        if (!flag) {
+            flag = true;
+            el.addClass('scrolling');
+        }
+        clearTimeout(timer);
+        timer = setTimeout(function() {
+            el.removeClass('scrolling');
+            flag = false;
+        }, 200);
+    });
+
+});
+
+*/

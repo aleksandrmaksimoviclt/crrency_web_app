@@ -21,9 +21,12 @@ $(document).ready(function() {
                 type: $(this).attr('method'),
                 url: $(this).attr('action'),
                 success: function(response){
-                    $('#message').html("Subscribed!")
-                    $('#email').val('');
                     $('#submit').attr('disabled',true);
+                    $(location).attr('href', '/thankyou');
+                    /*$('#message').html("Subscribed!")
+                    $('#email').val('');
+                    $('#landing').addClass('hide');
+                    $('#socialblock').removeClass('hide');*/
                 }
             });
             return false;
@@ -42,6 +45,11 @@ $(document).ready(function() {
             $('#message').delay(3000).fadeTo( "slow" , 0)
             });
     });
-    
+
+    $('#submit').click(function(){
+        $('#message').fadeTo("slow" , 1, function() {
+            $('#message').delay(3000).fadeTo( "slow" , 0)
+            });
+    });
 
 });

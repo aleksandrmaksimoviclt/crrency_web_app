@@ -1,0 +1,23 @@
+img.rounded.contact {
+    height: 40px;
+}
+
+.contact {
+    display: inline-flex;
+    position: relative;
+}
+
+.contact-avatar-wrapper {
+    padding-right: 8px;
+}
+
+span.contact-name {
+    line-height: 1;
+    font-size: 1.6rem;
+}
+
+span.contact-job {
+    line-height: 1;
+    margin-top: 5px;
+    display: block;
+}

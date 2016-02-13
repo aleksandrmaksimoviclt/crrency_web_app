@@ -24,22 +24,32 @@
 
 <section class="fullpage coverimg" id="CTA">
     <div class="blacktint">
-        <div class="row center ycenter box">
-            <h1 class="text nomargin cta-element textshadow" style="font-weight: bold">Use your own currency!</h1>
-            <h5 class="text cta-element textshadow">World’s first platform for truly transparent economic networks</h5>
-              <div class="row emailmargin">
-                <form method="POST" id="collect-email" action="/subscribe/">
-                  <div class="row text center">
-                    <div class="input-field col s12">
-                      <input placeholder="Enter your email here" id="email" type="email" class="validate" autocomplete="off" required value=''>
-                    </div>
-                    <div class="row nomargin" id="message">&nbsp;
+
+      <div class="row center ycenter box">
+        
+        <div id="landing">
+          <!--<img class="fb" src="{% static 'frontend/img/crrency_logo.png' %}">-->
+          <h1 class="text nomargin cta-element textshadow" style="font-weight: bold">Use your own currency!</h1>
+          <h5 class="text cta-element textshadow">World’s first platform for truly transparent economic networks</h5>
+            <div class="row emailmargin">
+              <form method="POST" id="collect-email" action="/subscribe/">
+                <div class="row text center">
+                  <div class="input-field col s12">
+                    <input placeholder="Enter your email here" id="email" type="email" class="validate" autocomplete="off" required value=''>
                   </div>
-                  <input id="submit" type="submit" class="red btn cta-element"></input>
-                </form>
-              </div>
+                  <div class="row nomargin" id="message">&nbsp;
+                </div>
+                <input id="submit" value="Subscribe" type="submit" class="red btn cta-element"></input>
+              </form>
             </div>
+          </div>
+
         </div>
+
+      </div>
+
+      
+
     </div>
 </section>
 

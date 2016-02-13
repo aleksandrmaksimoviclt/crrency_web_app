@@ -22,7 +22,12 @@
     <link href="{% static 'dashboard/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="{% static 'dashboard/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
     <!-- Materialize CSS Framework | Custom CSS -->
-    <link href="{% static 'dashboard/css/custom.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{% static 'dashboard/css/body.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{% static 'dashboard/css/timeline.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{% static 'dashboard/css/profile.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{% static 'dashboard/css/people.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{% static 'dashboard/css/settings.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{% static 'dashboard/css/search.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 
 <!--Preloader-->
@@ -39,16 +44,25 @@
         </div>
       </div>
     </div>
-  </div>
+</div>
+
+<ul id="slide-out" class="side-nav">
+  <li><a href="#!">First Sidebar Link</a></li>
+  <li><a href="#!">Second Sidebar Link</a></li>
+</ul>
+<a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
 
 <!--Navigation Tabs Open-->
-<section class="darkblue fixed" style="width:100%; height:48px; z-index:8000;" id="navigation-tabs">
-	
+<section class="darkblue fixed" style="width:100%; height:88px; z-index:99;" id="navigation-tabs">
+		<div class="container center logo-header">
+			<img class="logo" src="{% static 'dashboard/img/logo.png' %}">
+		</div>
+		
 		<div class="row">
 			<div class="container">
 				<div class="s12">
-				  <ul class="tabs darkblue">
-				    <li class="tab col-5th"><a href="#timeline"><i class="material-icons line-height-inherit themewhite-text">home</i></a></li>
+				  <ul class="tabs darkblue preloading" id="tabs">
+				    <li class="tab col-5th"><a id="home" href="#timeline"><i class="material-icons line-height-inherit themewhite-text">home</i></a></li>
 				    <li class="tab col-5th"><a href="#profile"><i class="material-icons line-height-inherit themewhite-text">person</i></a></li>
 				    <li class="tab col-5th"><a href="#people"><i class="material-icons line-height-inherit themewhite-text">people</i></a></li>
 				    <li class="tab col-5th"><a href="#settings"><i class="material-icons line-height-inherit themewhite-text">settings</i></a></li>
@@ -60,546 +74,375 @@
 </section>
 <!--Navigation Tabs Close-->
 
+<!-- Floating Button Open -->
+
+<div class="fixed-action-btn click-to-toggle " style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large theme-blue">
+    	<i class="material-icons">add</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating white"><i class="material-icons">insert_chart</i></a></li>
+      <li><a class="btn-floating white"><i class="material-icons">format_quote</i></a></li>
+      <li><a class="btn-floating white"><i class="material-icons">publish</i></a></li>
+      <li><a class="btn-floating white"><i class="material-icons">attach_file</i></a></li>
+    </ul>
+</div>
+
+<!-- Floating Button Close -->
+
 <!-- Tabs Content Open-->
 
-<section style="padding-top: 48px;" id="tabs-content">
+<section class="hide" style="padding-top: 88px;" id="tabs-content">
+	
 	<div id="timeline" class="col s12">
-		<div class="row-feed themewhite-text post theme-blue z-depth-1">
-			<div class="s12 container">
-				<div class="row nomargin">
-					<div class="col s12 nopadding whotransacts">
-						<div class="col s5 textcenter" id="sender">
-							<img class="sender rounded feed_image " src="{% static "dashboard/img/simas.jpg" %}" alt="Sender"/></br>
-							<span class="feed-name">Simonas</br> 
-							Zilinkas
-							</span>
-						</div>
-						<div class="col s2 textcenter height100">
-							<i class="material-icons md-24 ycenter">keyboard_arrow_right</i>
-						</div>
-						<div class="col s5 textcenter" id="recipient">
-							<img class=" recipient rounded feed_image" src="{% static "dashboard/img/lukas.jpg" %}" alt="recipient"></br>
-							<span class="feed-name">Lukas</br> 
-							Dambrauskas
-							</span>
-						</div>
+		<div class="row-feed black-text post white z-depth-2">
+			<div class="col s12 row nomargin post-head">
+				<div class="whotransact">
+					<div class="left">
+						<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
+						<i class="material-icons md-14 line-height-inherit vertical-allign-middle">keyboard_arrow_right</i>
+						<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
 					</div>
-				
-					<div class="nopadding col s8">
-						<span class="short">For: </span> 
-						<span class="for">
-							</br>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</span> 
+					<div class="right">
+							<span class="feed-name2 sub">500.00</span>
 					</div>
-
-					<div class="nopadding col s4 nopadding">
-						<span class="short">Amount: </span> <span class="ammout"></br>8945,84 PTS</span>
-					</div>					
 				</div>
-			<div class="col s12 row time">
-				2min ago..
-			</div>	
+			</div>
+			<div class="story">
+				<img class="post-image" src="{% static "dashboard/img/1.jpg" %}" alt="Image"/></br>				
+			</div>
+			<div class="post-foot">
+				<div class="right">
+					<span class="feed-name2 sub time"><i class="material-icons md-14 line-height-inherit vertical-allign-middle">access_time</i> 1 min ago</span>
+				</div>
 			</div>
 		</div>
 
-		<div class="row-feed themewhite-text post theme-blue z-depth-1">
-			<div class="s12 container">
-				<div class="row nomargin">
-					<div class="col s12 nopadding whotransacts">
-						<div class="col s5 textcenter" id="sender">
-							<img class="sender rounded feed_image " src="{% static "dashboard/img/simas.jpg" %}" alt="Sender"/></br>
-							<span class="feed-name">Simonas</br> 
-							Zilinkas
-							</span>
-						</div>
-						<div class="col s2 textcenter height100">
-							<i class="material-icons md-24 ycenter">keyboard_arrow_right</i>
-						</div>
-						<div class="col s5 textcenter" id="recipient">
-							<img class=" recipient rounded feed_image" src="{% static "dashboard/img/lukas.jpg" %}" alt="recipient"></br>
-							<span class="feed-name">Lukas</br> 
-							Dambrauskas
-							</span>
-						</div>
+		<div class="row-feed black-text post white z-depth-2">
+			<div class="col s12 row nomargin post-head">
+				<div class="whotransact">
+					<div class="left">
+						<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
+						<i class="material-icons md-14 line-height-inherit vertical-allign-middle">keyboard_arrow_right</i>
+						<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
 					</div>
-				
-					<div class="nopadding col s8">
-						<span class="short">For: </span> 
-						<span class="for">
-							</br>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</span> 
+					<div class="right">
+							<span class="feed-name2 sub">500.00</span>
 					</div>
-
-					<div class="nopadding col s4 nopadding">
-						<span class="short">Amount: </span> <span class="ammout"></br>8945,84 PTS</span>
-					</div>					
 				</div>
-			<div class="col s12 row time">
-				2min ago..
-			</div>	
+			</div>
+			<div class="story">
+				<img class="post-image" src="{% static "dashboard/img/2.jpg" %}" alt="Image"/></br>				
+			</div>
+			<div class="post-foot">
+				<div class="right">
+					<span class="feed-name2 sub time"><i class="material-icons md-14 line-height-inherit vertical-allign-middle">access_time</i> 1 min ago</span>
+				</div>
 			</div>
 		</div>
-		<div class="row-feed themewhite-text post theme-blue z-depth-1">
-			<div class="s12 container">
-				<div class="row nomargin">
-					<div class="col s12 nopadding whotransacts">
-						<div class="col s5 textcenter" id="sender">
-							<img class="sender rounded feed_image " src="{% static "dashboard/img/simas.jpg" %}" alt="Sender"/></br>
-							<span class="feed-name">Simonas</br> 
-							Zilinkas
-							</span>
-						</div>
-						<div class="col s2 textcenter height100">
-							<i class="material-icons md-24 ycenter">keyboard_arrow_right</i>
-						</div>
-						<div class="col s5 textcenter" id="recipient">
-							<img class=" recipient rounded feed_image" src="{% static "dashboard/img/lukas.jpg" %}" alt="recipient"></br>
-							<span class="feed-name">Lukas</br> 
-							Dambrauskas
-							</span>
-						</div>
-					</div>
-				
-					<div class="nopadding col s8">
-						<span class="short">For: </span> 
-						<span class="for">
-							</br>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</span> 
-					</div>
 
-					<div class="nopadding col s4 nopadding">
-						<span class="short">Amount: </span> <span class="ammout"></br>8945,84 PTS</span>
-					</div>					
+		<div class="row-feed black-text post white z-depth-2">
+			<div class="col s12 row nomargin post-head">
+				<div class="whotransact">
+					<div class="left">
+						<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
+						<i class="material-icons md-14 line-height-inherit vertical-allign-middle">keyboard_arrow_right</i>
+						<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
+					</div>
+					<div class="right">
+							<span class="feed-name2 sub">500.00</span>
+					</div>
 				</div>
-			<div class="col s12 row time">
-				2min ago..
-			</div>	
+			</div>
+			<div class="story">
+				<img class="post-image" src="{% static "dashboard/img/3.jpg" %}" alt="Image"/></br>				
+			</div>
+			<div class="post-foot">
+				<div class="right">
+					<span class="feed-name2 sub time"><i class="material-icons md-14 line-height-inherit vertical-allign-middle">access_time</i> 1 min ago</span>
+				</div>
 			</div>
 		</div>
-		<div class="row-feed themewhite-text post theme-blue z-depth-1">
-			<div class="s12 container">
-				<div class="row nomargin">
-					<div class="col s12 nopadding whotransacts">
-						<div class="col s5 textcenter" id="sender">
-							<img class="sender rounded feed_image " src="{% static "dashboard/img/simas.jpg" %}" alt="Sender"/></br>
-							<span class="feed-name">Simonas</br> 
-							Zilinkas
-							</span>
-						</div>
-						<div class="col s2 textcenter height100">
-							<i class="material-icons md-24 ycenter">keyboard_arrow_right</i>
-						</div>
-						<div class="col s5 textcenter" id="recipient">
-							<img class=" recipient rounded feed_image" src="{% static "dashboard/img/lukas.jpg" %}" alt="recipient"></br>
-							<span class="feed-name">Lukas</br> 
-							Dambrauskas
-							</span>
-						</div>
+
+		<div class="row-feed black-text post white z-depth-2">
+			<div class="col s12 row nomargin post-head">
+				<div class="whotransact">
+					<div class="left">
+						<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
+						<i class="material-icons md-14 line-height-inherit vertical-allign-middle">keyboard_arrow_right</i>
+						<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
 					</div>
-				
-					<div class="nopadding col s8">
-						<span class="short">For: </span> 
-						<span class="for">
-							</br>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</span> 
+					<div class="right">
+							<span class="feed-name2 sub">500.00</span>
+					</div>
+				</div>
+			</div>
+			<div class="story">
+				<img class="post-image" src="{% static "dashboard/img/4.jpg" %}" alt="Image"/></br>				
+			</div>
+			<div class="post-foot">
+				<div class="right">
+					<span class="feed-name2 sub time"><i class="material-icons md-14 line-height-inherit vertical-allign-middle">access_time</i> 1 min ago</span>
+				</div>
+			</div>
+		</div>	
+	</div>
+	
+	<div id="profile" class="col s12">
+		<div class="row-feed black-text post white z-depth-2">
+			<div class="col s12 nopadding whotransact">
+				<div class="col s12 center">
+
+					<img class="sender rounded profile-image " src="{% static "dashboard/img/simas.jpg" %}" alt="Sender"/></br>
+					<span class="profile-name"> Simonas Zilinkas</span></br>
+					<span class="profile-info black-text">UI/UX Designer</br></span>
+					Vilnius, Lithuania</br>
+					<span class="balance-current">+100.00</span></br>
+					<span class="balance-month">+200.00% This Month</span>
+
+					</br>
+					</br>
+
+					<div class="col s12 row nomargin">
+						<div class="col s6">
+							<a href="tel:+37069441362"><i id="phone" class="material-icons md-24 line-height-inherit vertical-allign-bottom">phone</i></a>
+						</div>
+						<div class="col s6">
+							<a href="mailto:asesugeris@muchlove.com"><i id="mail" class="material-icons md-24 line-height-inherit vertical-allign-bottom">mail</i></a>
+						</div>
 					</div>
 
-					<div class="nopadding col s4 nopadding">
-						<span class="short">Amount: </span> <span class="ammout"></br>8945,84 PTS</span>
-					</div>					
-				</div>
-			<div class="col s12 row time">
-				2min ago..
-			</div>	
+				</div>	
 			</div>
 		</div>
-		<div class="row-feed themewhite-text post theme-blue z-depth-1">
-			<div class="s12 container">
-				<div class="row nomargin">
-					<div class="col s12 nopadding whotransacts">
-						<div class="col s5 textcenter" id="sender">
-							<img class="sender rounded feed_image " src="{% static "dashboard/img/simas.jpg" %}" alt="Sender"/></br>
-							<span class="feed-name">Simonas</br> 
-							Zilinkas
-							</span>
-						</div>
-						<div class="col s2 textcenter height100">
-							<i class="material-icons md-24 ycenter">keyboard_arrow_right</i>
-						</div>
-						<div class="col s5 textcenter" id="recipient">
-							<img class=" recipient rounded feed_image" src="{% static "dashboard/img/lukas.jpg" %}" alt="recipient"></br>
-							<span class="feed-name">Lukas</br> 
-							Dambrauskas
-							</span>
-						</div>
-					</div>
-				
-					<div class="nopadding col s8">
-						<span class="short">For: </span> 
-						<span class="for">
-							</br>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</span> 
-					</div>
 
-					<div class="nopadding col s4 nopadding">
-						<span class="short">Amount: </span> <span class="ammout"></br>8945,84 PTS</span>
-					</div>					
+		<div id="timeline" class="col s12">
+			<div class="row-feed black-text post white z-depth-2">
+				<div class="col s12 row nomargin post-head">
+					<div class="whotransact">
+						<div class="left">
+							<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
+							<i class="material-icons md-14 line-height-inherit vertical-allign-middle">keyboard_arrow_right</i>
+							<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
+						</div>
+						<div class="right">
+								<span class="feed-name2 sub">500.00</span>
+						</div>
+					</div>
 				</div>
-			<div class="col s12 row time">
-				2min ago..
-			</div>	
+				<div class="story">
+					<img class="post-image" src="{% static "dashboard/img/1.jpg" %}" alt="Image"/></br>				
+				</div>
+				<div class="post-foot">
+					<div class="right">
+						<span class="feed-name2 sub time"><i class="material-icons md-14 line-height-inherit vertical-allign-middle">access_time</i> 1 min ago</span>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="row-feed themewhite-text post theme-blue z-depth-1">
-			<div class="s12 container">
-				<div class="row nomargin">
-					<div class="col s12 nopadding whotransacts">
-						<div class="col s5 textcenter" id="sender">
-							<img class="sender rounded feed_image " src="{% static "dashboard/img/simas.jpg" %}" alt="Sender"/></br>
-							<span class="feed-name">Simonas</br> 
-							Zilinkas
-							</span>
-						</div>
-						<div class="col s2 textcenter height100">
-							<i class="material-icons md-24 ycenter">keyboard_arrow_right</i>
-						</div>
-						<div class="col s5 textcenter" id="recipient">
-							<img class=" recipient rounded feed_image" src="{% static "dashboard/img/lukas.jpg" %}" alt="recipient"></br>
-							<span class="feed-name">Lukas</br> 
-							Dambrauskas
-							</span>
-						</div>
-					</div>
-				
-					<div class="nopadding col s8">
-						<span class="short">For: </span> 
-						<span class="for">
-							</br>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</span> 
-					</div>
 
-					<div class="nopadding col s4 nopadding">
-						<span class="short">Amount: </span> <span class="ammout"></br>8945,84 PTS</span>
-					</div>					
+			<div class="row-feed black-text post white z-depth-2">
+				<div class="col s12 row nomargin post-head">
+					<div class="whotransact">
+						<div class="left">
+							<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
+							<i class="material-icons md-14 line-height-inherit vertical-allign-middle">keyboard_arrow_right</i>
+							<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
+						</div>
+						<div class="right">
+								<span class="feed-name2 sub">500.00</span>
+						</div>
+					</div>
 				</div>
-			<div class="col s12 row time">
-				2min ago..
-			</div>	
+				<div class="story">
+					<img class="post-image" src="{% static "dashboard/img/2.jpg" %}" alt="Image"/></br>				
+				</div>
+				<div class="post-foot">
+					<div class="right">
+						<span class="feed-name2 sub time"><i class="material-icons md-14 line-height-inherit vertical-allign-middle">access_time</i> 1 min ago</span>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="row-feed themewhite-text post theme-blue z-depth-1">
-			<div class="s12 container">
-				<div class="row nomargin">
-					<div class="col s12 nopadding whotransacts">
-						<div class="col s5 textcenter" id="sender">
-							<img class="sender rounded feed_image " src="{% static "dashboard/img/simas.jpg" %}" alt="Sender"/></br>
-							<span class="feed-name">Simonas</br> 
-							Zilinkas
-							</span>
-						</div>
-						<div class="col s2 textcenter height100">
-							<i class="material-icons md-24 ycenter">keyboard_arrow_right</i>
-						</div>
-						<div class="col s5 textcenter" id="recipient">
-							<img class=" recipient rounded feed_image" src="{% static "dashboard/img/lukas.jpg" %}" alt="recipient"></br>
-							<span class="feed-name">Lukas</br> 
-							Dambrauskas
-							</span>
-						</div>
-					</div>
-				
-					<div class="nopadding col s8">
-						<span class="short">For: </span> 
-						<span class="for">
-							</br>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</span> 
-					</div>
 
-					<div class="nopadding col s4 nopadding">
-						<span class="short">Amount: </span> <span class="ammout"></br>8945,84 PTS</span>
-					</div>					
+			<div class="row-feed black-text post white z-depth-2">
+				<div class="col s12 row nomargin post-head">
+					<div class="whotransact">
+						<div class="left">
+							<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
+							<i class="material-icons md-14 line-height-inherit vertical-allign-middle">keyboard_arrow_right</i>
+							<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
+						</div>
+						<div class="right">
+								<span class="feed-name2 sub">500.00</span>
+						</div>
+					</div>
 				</div>
-			<div class="col s12 row time">
-				2min ago..
-			</div>	
+				<div class="story">
+					<img class="post-image" src="{% static "dashboard/img/3.jpg" %}" alt="Image"/></br>				
+				</div>
+				<div class="post-foot">
+					<div class="right">
+						<span class="feed-name2 sub time"><i class="material-icons md-14 line-height-inherit vertical-allign-middle">access_time</i> 1 min ago</span>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="row-feed themewhite-text post theme-blue z-depth-1">
-			<div class="s12 container">
-				<div class="row nomargin">
-					<div class="col s12 nopadding whotransacts">
-						<div class="col s5 textcenter" id="sender">
-							<img class="sender rounded feed_image " src="{% static "dashboard/img/simas.jpg" %}" alt="Sender"/></br>
-							<span class="feed-name">Simonas</br> 
-							Zilinkas
-							</span>
-						</div>
-						<div class="col s2 textcenter height100">
-							<i class="material-icons md-24 ycenter">keyboard_arrow_right</i>
-						</div>
-						<div class="col s5 textcenter" id="recipient">
-							<img class=" recipient rounded feed_image" src="{% static "dashboard/img/lukas.jpg" %}" alt="recipient"></br>
-							<span class="feed-name">Lukas</br> 
-							Dambrauskas
-							</span>
-						</div>
-					</div>
-				
-					<div class="nopadding col s8">
-						<span class="short">For: </span> 
-						<span class="for">
-							</br>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</span> 
-					</div>
 
-					<div class="nopadding col s4 nopadding">
-						<span class="short">Amount: </span> <span class="ammout"></br>8945,84 PTS</span>
-					</div>					
+			<div class="row-feed black-text post white z-depth-2">
+				<div class="col s12 row nomargin post-head">
+					<div class="whotransact">
+						<div class="left">
+							<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
+							<i class="material-icons md-14 line-height-inherit vertical-allign-middle">keyboard_arrow_right</i>
+							<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
+						</div>
+						<div class="right">
+							<span class="feed-name2 sub">500.00</span>
+						</div>
+					</div>
 				</div>
-			<div class="col s12 row time">
-				2min ago..
-			</div>	
-			</div>
+				<div class="story">
+					<img class="post-image" src="{% static "dashboard/img/4.jpg" %}" alt="Image"/></br>				
+				</div>
+				<div class="post-foot">
+					<div class="right">
+						<span class="feed-name2 sub time"><i class="material-icons md-14 line-height-inherit vertical-allign-middle">access_time</i> 1 min ago</span>
+					</div>
+				</div>
+			</div>		
 		</div>
-		<div class="row-feed themewhite-text post theme-blue z-depth-1">
-			<div class="s12 container">
-				<div class="row nomargin">
-					<div class="col s12 nopadding whotransacts">
-						<div class="col s5 textcenter" id="sender">
-							<img class="sender rounded feed_image " src="{% static "dashboard/img/simas.jpg" %}" alt="Sender"/></br>
-							<span class="feed-name">Simonas</br> 
-							Zilinkas
-							</span>
-						</div>
-						<div class="col s2 textcenter height100">
-							<i class="material-icons md-24 ycenter">keyboard_arrow_right</i>
-						</div>
-						<div class="col s5 textcenter" id="recipient">
-							<img class=" recipient rounded feed_image" src="{% static "dashboard/img/lukas.jpg" %}" alt="recipient"></br>
-							<span class="feed-name">Lukas</br> 
-							Dambrauskas
-							</span>
-						</div>
-					</div>
-				
-					<div class="nopadding col s8">
-						<span class="short">For: </span> 
-						<span class="for">
-							</br>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</span> 
-					</div>
+	</div>
 
-					<div class="nopadding col s4 nopadding">
-						<span class="short">Amount: </span> <span class="ammout"></br>8945,84 PTS</span>
-					</div>					
+	<div id="people" class="col s12">
+		<div class="col s12">
+			<div class="row-feed black-text post white z-depth-2">
+				<div class="contact row2">
+					<div class="contact-avatar-wrapper">
+						<img class="rounded contact" src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">
+					</div>
+					<div>
+						<span class="contact-name">Simas Zilinskas</span></br><span class="contact-job">UI/UX Designer</span>
+					</div>
 				</div>
-			<div class="col s12 row time">
-				2min ago..
-			</div>	
 			</div>
 		</div>
-		<div class="row-feed themewhite-text post theme-blue z-depth-1">
-			<div class="s12 container">
-				<div class="row nomargin">
-					<div class="col s12 nopadding whotransacts">
-						<div class="col s5 textcenter" id="sender">
-							<img class="sender rounded feed_image " src="{% static "dashboard/img/simas.jpg" %}" alt="Sender"/></br>
-							<span class="feed-name">Simonas</br> 
-							Zilinkas
-							</span>
-						</div>
-						<div class="col s2 textcenter height100">
-							<i class="material-icons md-24 ycenter">keyboard_arrow_right</i>
-						</div>
-						<div class="col s5 textcenter" id="recipient">
-							<img class=" recipient rounded feed_image" src="{% static "dashboard/img/lukas.jpg" %}" alt="recipient"></br>
-							<span class="feed-name">Lukas</br> 
-							Dambrauskas
-							</span>
-						</div>
-					</div>
-				
-					<div class="nopadding col s8">
-						<span class="short">For: </span> 
-						<span class="for">
-							</br>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</span> 
-					</div>
+	</div>
 
-					<div class="nopadding col s4 nopadding">
-						<span class="short">Amount: </span> <span class="ammout"></br>8945,84 PTS</span>
-					</div>					
-				</div>
-			<div class="col s12 row time">
-				2min ago..
-			</div>	
-			</div>
-		</div>
-		<div class="row-feed themewhite-text post theme-blue z-depth-1">
-			<div class="s12 container">
-				<div class="row nomargin">
-					<div class="col s12 nopadding whotransacts">
-						<div class="col s5 textcenter" id="sender">
-							<img class="sender rounded feed_image " src="{% static "dashboard/img/simas.jpg" %}" alt="Sender"/></br>
-							<span class="feed-name">Simonas</br> 
-							Zilinkas
-							</span>
-						</div>
-						<div class="col s2 textcenter height100">
-							<i class="material-icons md-24 ycenter">keyboard_arrow_right</i>
-						</div>
-						<div class="col s5 textcenter" id="recipient">
-							<img class=" recipient rounded feed_image" src="{% static "dashboard/img/lukas.jpg" %}" alt="recipient"></br>
-							<span class="feed-name">Lukas</br> 
-							Dambrauskas
-							</span>
-						</div>
-					</div>
-				
-					<div class="nopadding col s8">
-						<span class="short">For: </span> 
-						<span class="for">
-							</br>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</span> 
-					</div>
-
-					<div class="nopadding col s4 nopadding">
-						<span class="short">Amount: </span> <span class="ammout"></br>8945,84 PTS</span>
-					</div>					
-				</div>
-			<div class="col s12 row time">
-				2min ago..
-			</div>	
-			</div>
-		</div>
-		<div class="row-feed themewhite-text post theme-blue z-depth-1">
-			<div class="s12 container">
-				<div class="row nomargin">
-					<div class="col s12 nopadding whotransacts">
-						<div class="col s5 textcenter" id="sender">
-							<img class="sender rounded feed_image " src="{% static "dashboard/img/simas.jpg" %}" alt="Sender"/></br>
-							<span class="feed-name">Simonas</br> 
-							Zilinkas
-							</span>
-						</div>
-						<div class="col s2 textcenter height100">
-							<i class="material-icons md-24 ycenter">keyboard_arrow_right</i>
-						</div>
-						<div class="col s5 textcenter" id="recipient">
-							<img class=" recipient rounded feed_image" src="{% static "dashboard/img/lukas.jpg" %}" alt="recipient"></br>
-							<span class="feed-name">Lukas</br> 
-							Dambrauskas
-							</span>
-						</div>
-					</div>
-				
-					<div class="nopadding col s8">
-						<span class="short">For: </span> 
-						<span class="for">
-							</br>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</span> 
-					</div>
-
-					<div class="nopadding col s4 nopadding">
-						<span class="short">Amount: </span> <span class="ammout"></br>8945,84 PTS</span>
-					</div>					
-				</div>
-			<div class="col s12 row time">
-				2min ago..
-			</div>	
-			</div>
-		</div>
-		<div class="row-feed themewhite-text post theme-blue z-depth-1">
-			<div class="s12 container">
-				<div class="row nomargin">
-					<div class="col s12 nopadding whotransacts">
-						<div class="col s5 textcenter" id="sender">
-							<img class="sender rounded feed_image " src="{% static "dashboard/img/simas.jpg" %}" alt="Sender"/></br>
-							<span class="feed-name">Simonas</br> 
-							Zilinkas
-							</span>
-						</div>
-						<div class="col s2 textcenter height100">
-							<i class="material-icons md-24 ycenter">keyboard_arrow_right</i>
-						</div>
-						<div class="col s5 textcenter" id="recipient">
-							<img class=" recipient rounded feed_image" src="{% static "dashboard/img/lukas.jpg" %}" alt="recipient"></br>
-							<span class="feed-name">Lukas</br> 
-							Dambrauskas
-							</span>
-						</div>
-					</div>
-				
-					<div class="nopadding col s8">
-						<span class="short">For: </span> 
-						<span class="for">
-							</br>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</span> 
-					</div>
-
-					<div class="nopadding col s4 nopadding">
-						<span class="short">Amount: </span> <span class="ammout"></br>8945,84 PTS</span>
-					</div>					
-				</div>
-			<div class="col s12 row time">
-				2min ago..
-			</div>	
-			</div>
-		</div>
-		<div class="row-feed themewhite-text post theme-blue z-depth-1">
-			<div class="s12 container">
-				<div class="row nomargin">
-					<div class="col s12 nopadding whotransacts">
-						<div class="col s5 textcenter" id="sender">
-							<img class="sender rounded feed_image " src="{% static "dashboard/img/simas.jpg" %}" alt="Sender"/></br>
-							<span class="feed-name">Simonas</br> 
-							Zilinkas
-							</span>
-						</div>
-						<div class="col s2 textcenter height100">
-							<i class="material-icons md-24 ycenter">keyboard_arrow_right</i>
-						</div>
-						<div class="col s5 textcenter" id="recipient">
-							<img class=" recipient rounded feed_image" src="{% static "dashboard/img/lukas.jpg" %}" alt="recipient"></br>
-							<span class="feed-name">Lukas</br> 
-							Dambrauskas
-							</span>
-						</div>
-					</div>
-				
-					<div class="nopadding col s8">
-						<span class="short">For: </span> 
-						<span class="for">
-							</br>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</span> 
-					</div>
-
-					<div class="nopadding col s4 nopadding">
-						<span class="short">Amount: </span> <span class="ammout"></br>8945,84 PTS</span>
-					</div>					
-				</div>
-			<div class="col s12 row time">
-				2min ago..
-			</div>	
-			</div>
-		</div>
+	<div id="settings">
 		
+		<!-- Current Network -->
+
+		<div class="col s12">
+			<div class="row-feed black-text post white z-depth-2">
+				You are on:
+			</div>
+
+			<div class="row-feed black-text post white z-depth-2">
+				<div class="row">
+					<div>
+						<span class="x-large">Network name</span>
+					</div>
+				</div>
+				<div class="row nomargin">
+					<div>
+						<span class="x-large right">10000.00</span>
+					</div>
+				</div>
+				<div class="row">
+					<div>
+						<span class="right">Total money outstanding</span>
+					</div>
+				</div>
+				<div class="row nomargin">
+					<div>
+						<span class="x-large right">+100.00</span>
+					</div>
+				</div>
+				<div class="row nomargin">
+					<div>
+						<span class="right">Personal balance</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Aviable Networks -->
 
 
+		<div class="col s12">
+			<div class="row-feed black-text post white z-depth-2">
+				Switch to:
+			</div>
+
+
+			<a href="#">
+				<div class="row-feed black-text post white z-depth-2">
+					<div class="row">
+						<div>
+							<span class="x-large">Network name</span>
+						</div>
+					</div>
+					<div class="row nomargin">
+						<div>
+							<span class="x-large right">10000.00</span>
+						</div>
+					</div>
+					<div class="row">
+						<div>
+							<span class="right">Total money outstanding</span>
+						</div>
+					</div>
+					<div class="row nomargin">
+						<div>
+							<span class="x-large right">+100.00</span>
+						</div>
+					</div>
+					<div class="row nomargin">
+						<div>
+							<span class="right">Personal balance</span>
+						</div>
+					</div>
+				</div>
+			</a>
+
+			<a href="#">
+				<div class="row-feed black-text post white z-depth-2">
+					<div class="row">
+						<div>
+							<span class="x-large">Network name</span>
+						</div>
+					</div>
+					<div class="row nomargin">
+						<div>
+							<span class="x-large right">10000.00</span>
+						</div>
+					</div>
+					<div class="row">
+						<div>
+							<span class="right">Total money outstanding</span>
+						</div>
+					</div>
+					<div class="row nomargin">
+						<div>
+							<span class="x-large right">+100.00</span>
+						</div>
+					</div>
+					<div class="row nomargin">
+						<div>
+							<span class="right">Personal balance</span>
+						</div>
+					</div>
+				</div>
+			</a>
+
+		</div>
+
+	</div>
+
+	<div id="search">
+		<div class="col s12">
+			<div class="row-feed black-text post white z-depth-2">
+				Search
+			</div>
+		</div>
 	</div>
 </section>
 
