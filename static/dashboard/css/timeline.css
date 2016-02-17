@@ -1,33 +1,54 @@
-/* Crrency web app */
-.post {padding: 8px;}
-.row-feed {margin-left: auto;margin-right: auto;margin: 10px;}
-span.feed-name2 {color: #444;}
-span.feed-name2.sub {color: #9e9e9e;font-size: small;}
-span.feed-name2.sub.time {line-height: inherit;}
-img.post-image {width: 100%;padding: 10px 0px 10px 0px;}
-.feed_image {height: 60px;}
-div#timeline {max-width: 1280px;margin: 0 auto;}
-/*.post-head{height: 25px;}*/
-.post-foot{height: 25px;}
-
-
-
-
-@media only screen and (min-width: 768px) {
-    .post {padding: 16px;} 
-    .row-feed {margin: 60px;}
-    img.post-image {padding: 15px 0px 15px 0px;}
-    /*.post-head{height: 50px;}*/
-    .post-foot{height: 50px;}
+article{
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 6px;
+}
+.whotransact{
+    height: 72px;
+    padding: 12px;
 }
 
-@media only screen and (max-width: 600px) { 
-    img.post-image {padding: 10px 0px 10px 0px;}
-    /*.post-head{height: 20px;}*/
-    .post-foot{height: 20px;}
-    .row-feed {margin: 20px;}
+.sender-wrapper, .recipient-wrapper{
+    height: 30px;
+    color:rgba(0, 0, 0, 0.87);
+    font-weight:600;
 }
 
-@media only screen and (max-width: 400px) { 
-    .chip {font-size: 12px;}
+.sender-image-wrapper, .recipient-image-wrapper{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid black;
+    margin-right: 10px;
+}
+
+.sender, .recipient{
+    height: 100%;
+    width: 100%;
+}
+
+.divider-wrapper{
+    margin: 0px 10px 0px 10px;
+    line-height: 0;
+}
+
+.sender-name-wrapper{
+}
+
+.recipient-name-wrapper{
+
+}
+.transaction-img{
+    height: 100%;
+    width: 100%;
+}
+
+.flexcontainer {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+   -webkit-align-items: center;
+   align-items: center;
 }

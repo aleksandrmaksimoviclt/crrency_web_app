@@ -1,12 +1,6 @@
 $(window).load(function(){
-/*
-    whotransactsresize();
-    $(window).resize(whotransactsresize);
-    $('#home').click(function(){
-        whotransactsresize();
-    });
-*/
-    $('ul.tabs').tabs('select_tab', 'people');
+
+    $('ul.tabs').tabs('select_tab', 'timeline');
    
     
 

@@ -53,7 +53,7 @@
 <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
 
 <!--Navigation Tabs Open-->
-<section class="darkblue fixed" style="width:100%; height:88px; z-index:99;" id="navigation-tabs">
+<section class="darkblue fixed hide" style="width:100%; height:88px; z-index:99;" id="navigation-tabs">
 		<div class="container center logo-header">
 			<img class="logo" src="{% static 'dashboard/img/logo.png' %}">
 		</div>
@@ -95,13 +95,53 @@
 <section class="hide" style="padding-top: 88px;" id="tabs-content">
 	
 	<div id="timeline" class="col s12">
-		<div class="row-feed black-text post white z-depth-2">
+		<article style="background-color: #eeeeee;" >
+			<header class="whotransact flexcontainer">
+				<div class="flexcontainer left" style="flex:1">
+					<a class="sender-wrapper flexcontainer">
+						<div class="sender-image-wrapper">
+							<img class="sender" src="{% static "dashboard/img/simas.jpg" %}" alt="Sender">
+						</div>
+						<div class="sender-name-wrapper">
+							aleksandr
+						</div>
+					</a>
+					<div class="divider-wrapper">
+						<i class="material-icons md-14">keyboard_arrow_right</i>
+					</div>
+					<a class="recipient-wrapper flexcontainer">
+						<div class="recipient-image-wrapper">
+							<img class="recipient" src="{% static "dashboard/img/simas.jpg" %}" alt="Recipient">
+						</div>
+						<div class="recipient-name-wrapper">
+							aleksandr
+						</div>
+					</a>
+				</div>
+				<div class="flexconteiner right">
+					<time datetime="2016-02-17 19:00">23:49</time>
+				</div>
+			</header>
+
+			<div>
+				<img class="transaction-img"src="{% static "dashboard/img/1.jpg" %}" alt="Senders and Recipients Transcaction">
+			</div>
+
+			<div class="">
+				blblblblblbl
+			</div>
+		</article>
+		<!--<div class="row-feed black-text post white z-depth-2">
 			<div class="col s12 row nomargin post-head">
 				<div class="whotransact">
 					<div class="left">
-						<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
+						<div>
+							<img class="timeline picture" src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras
+						</div>
 						<i class="material-icons md-14 line-height-inherit vertical-allign-middle">keyboard_arrow_right</i>
-						<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
+						<div>
+							<img class="timeline picture" src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras
+						</div>
 					</div>
 					<div class="right">
 							<span class="feed-name2 sub">500.00</span>
@@ -116,77 +156,10 @@
 					<span class="feed-name2 sub time"><i class="material-icons md-14 line-height-inherit vertical-allign-middle">access_time</i> 1 min ago</span>
 				</div>
 			</div>
-		</div>
-
-		<div class="row-feed black-text post white z-depth-2">
-			<div class="col s12 row nomargin post-head">
-				<div class="whotransact">
-					<div class="left">
-						<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
-						<i class="material-icons md-14 line-height-inherit vertical-allign-middle">keyboard_arrow_right</i>
-						<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
-					</div>
-					<div class="right">
-							<span class="feed-name2 sub">500.00</span>
-					</div>
-				</div>
-			</div>
-			<div class="story">
-				<img class="post-image" src="{% static "dashboard/img/2.jpg" %}" alt="Image"/></br>				
-			</div>
-			<div class="post-foot">
-				<div class="right">
-					<span class="feed-name2 sub time"><i class="material-icons md-14 line-height-inherit vertical-allign-middle">access_time</i> 1 min ago</span>
-				</div>
-			</div>
-		</div>
-
-		<div class="row-feed black-text post white z-depth-2">
-			<div class="col s12 row nomargin post-head">
-				<div class="whotransact">
-					<div class="left">`
-						<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
-						<i class="material-icons md-14 line-height-inherit vertical-allign-middle">keyboard_arrow_right</i>
-						<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
-					</div>
-					<div class="right">
-							<span class="feed-name2 sub">500.00</span>
-					</div>
-				</div>
-			</div>
-			<div class="story">
-				<img class="post-image" src="{% static "dashboard/img/3.jpg" %}" alt="Image"/></br>				
-			</div>
-			<div class="post-foot">
-				<div class="right">
-					<span class="feed-name2 sub time"><i class="material-icons md-14 line-height-inherit vertical-allign-middle">access_time</i> 1 min ago</span>
-				</div>
-			</div>
-		</div>
-
-		<div class="row-feed black-text post white z-depth-2">
-			<div class="col s12 row nomargin post-head">
-				<div class="whotransact">
-					<div class="left">
-						<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
-						<i class="material-icons md-14 line-height-inherit vertical-allign-middle">keyboard_arrow_right</i>
-						<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
-					</div>
-					<div class="right">
-							<span class="feed-name2 sub">500.00</span>
-					</div>
-				</div>
-			</div>
-			<div class="story">
-				<img class="post-image" src="{% static "dashboard/img/4.jpg" %}" alt="Image"/></br>				
-			</div>
-			<div class="post-foot">
-				<div class="right">
-					<span class="feed-name2 sub time"><i class="material-icons md-14 line-height-inherit vertical-allign-middle">access_time</i> 1 min ago</span>
-				</div>
-			</div>
-		</div>	
+		</div>-->
 	</div>
+
+		
 	
 	<div id="profile" class="col s12">
 		<div class="row-feed black-text post white z-depth-2">
