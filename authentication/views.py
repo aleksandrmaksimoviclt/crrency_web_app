@@ -47,7 +47,7 @@ def basic(request):
         auth.login(request, user)
         return HttpResponseRedirect('/dashboard/')
     else:
-        return HttpResponseRedirect('/authentication/login')
+        return HttpResponseRedirect('/auth/login')
 
 
 '''Linkedin Views'''

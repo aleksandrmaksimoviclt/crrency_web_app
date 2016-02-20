@@ -69,6 +69,7 @@ def make_transaction(sender, recipient, amount, currency):
     sender = Profile.objects.get(email=sender.email)
     recipient = Profile.objects.get(email=recipient)
     currency = Currency.objects.get(name=currency)
+    # update balance with interest rate
     sender_balance = UserBalance(sender, currency).get_balance()
     recipient_balance = UserBalance(recipient, currency).get_balance()
     tr = Transaction(

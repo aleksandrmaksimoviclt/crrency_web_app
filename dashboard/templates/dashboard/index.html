@@ -194,10 +194,10 @@
 				<div class="col s12 center">
 
 					<img class="sender rounded profile-image " src="{% static "dashboard/img/simas.jpg" %}" alt="Sender"/></br>
-					<span class="profile-name"> Simonas Zilinkas</span></br>
-					<span class="profile-info black-text">UI/UX Designer</br></span>
-					Vilnius, Lithuania</br>
-					<span class="balance-current">+100.00</span></br>
+					<span class="profile-name">{{ profile.name }} {{ profile.surname }}</span></br>
+					<span class="profile-info black-text">{{ profile.headline }}</br></span>
+				    {{ profile.current_location }}</br>
+					<span class="balance-current">{{ balance.amount }}</span></br>
 					<span class="balance-month">+200.00% This Month</span>
 
 					</br>
@@ -208,7 +208,7 @@
 							<a href="tel:+37069441362"><i id="phone" class="material-icons md-24 line-height-inherit vertical-allign-bottom">phone</i></a>
 						</div>
 						<div class="col s6">
-							<a href="mailto:asesugeris@muchlove.com"><i id="mail" class="material-icons md-24 line-height-inherit vertical-allign-bottom">mail</i></a>
+							<a href="mailto:{{ profile.email }}"><i id="mail" class="material-icons md-24 line-height-inherit vertical-allign-bottom">mail</i></a>
 						</div>
 					</div>
 
