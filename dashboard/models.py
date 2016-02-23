@@ -3,6 +3,7 @@ import uuid
 from django.db import models
 from django.conf import settings
 from django.utils import timezone
+from simple_history.models import HistoricalRecords
 
 from transaction.models import Currency
 
@@ -17,7 +18,8 @@ class Profile(models.Model):
     date_of_birth = models.DateField(null=True, blank=True)
     current_location = models.CharField(max_length=100, blank=True, null=True)
     date_joined = models.DateTimeField(editable=False, null=True)
-    networks = models.ManyToManyField(Currency, null=True, blank=True)
+    networks = models.ManyToManyField(Currency, blank=True)
+    history = HistoricalRecords()
 
 
     def save(self, *args, **kwargs):
@@ -29,32 +31,19 @@ class Profile(models.Model):
         return '%s %s' % (self.surname, self.name)
 
 
-class AbstractBalance(models.Model):
+class Balance(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user = models.ForeignKey(Profile)
     amount = models.FloatField(default=0)
     currency = models.ForeignKey(Currency)
-    change_time = models.DateTimeField()
+    change_time = models.DateTimeField(null=True)
+    history = HistoricalRecords()
+
+    def save(self, *args, **kwargs):
+        self.change_time = timezone.now()
+        return super(Balance, self).save(*args, **kwargs)
 
     def __str__(self):
         return "%s's Total balance: %s %s" % (self.user, self.amount, self.currency)
-
-
-class Balance(AbstractBalance):
-    def save(self):
-        bal = super(Balance, self).save()
-
-        # BalanceHistory.objects.create(
-        #     balance_hist=self.bal,
-        #     user=self.bal.user,
-        #     amount=self.bal.amount,
-        #     currency=self.bal.currency,
-        #     )
-
-class BalanceHistory(AbstractBalance):
-    balance_hist = models.ForeignKey(Balance, related_name='balance_history')
-
-    class Meta:
-        ordering = ['-pk']
 
 

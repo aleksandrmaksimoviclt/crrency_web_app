@@ -91,7 +91,6 @@ class Linkedin(object):
                 self.details['emailAddress'],
                 self.token['access_token'])
         except Exception as e:
-            import pdb; pdb.set_trace()
             self.msg.append(e)
             user = None
         return user
@@ -132,4 +131,4 @@ class Linkedin(object):
                 current_location=self.details['location']['name'],
             )
         except Exception as e:
-            import pdb; pdb.set_trace()
+            pass
