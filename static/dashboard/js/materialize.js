@@ -1986,8 +1986,15 @@ $(document).ready(function(){
 
   var methods = {
     init : function(options) {
+
+	    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+
+    	window.onresize = function(event) {
+    		var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+		};
+	  //var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
       var defaults = {
-        menuWidth: 240,
+        menuWidth: w,
         edge: 'left',
         closeOnClick: false
       };
@@ -2191,7 +2198,7 @@ $(document).ready(function(){
               if ((menuOut && velocityX <= 0.3) || velocityX < -0.5) {
                 menu_id.velocity({left: 0}, {duration: 300, queue: false, easing: 'easeOutQuad'});
                 $('#sidenav-overlay').velocity({opacity: 1 }, {duration: 50, queue: false, easing: 'easeOutQuad'});
-                dragTarget.css({width: '50%', right: 0, left: ''});
+                dragTarget.css({width: '10%', right: 0, left: ''});
               }
               else if (!menuOut || velocityX > 0.3) {
                 // Enable Scrolling
@@ -2209,7 +2216,7 @@ $(document).ready(function(){
               if ((menuOut && velocityX >= -0.3) || velocityX > 0.5) {
                 menu_id.velocity({right: 0}, {duration: 300, queue: false, easing: 'easeOutQuad'});
                 $('#sidenav-overlay').velocity({opacity: 1 }, {duration: 50, queue: false, easing: 'easeOutQuad'});
-                dragTarget.css({width: '50%', right: '', left: 0});
+                dragTarget.css({width: '10%', right: '', left: 0});
               }
               else if (!menuOut || velocityX < -0.3) {
                 // Enable Scrolling
@@ -2241,11 +2248,11 @@ $(document).ready(function(){
               $('body').append(dragTarget);
               
               if (options.edge === 'left') {
-                dragTarget.css({width: '50%', right: 0, left: ''});
+                dragTarget.css({width: '10%', right: 0, left: ''});
                 menu_id.velocity({left: 0}, {duration: 300, queue: false, easing: 'easeOutQuad'});
               }
               else {
-                dragTarget.css({width: '50%', right: '', left: 0});
+                dragTarget.css({width: '10%', right: '', left: 0});
                 menu_id.velocity({right: 0}, {duration: 300, queue: false, easing: 'easeOutQuad'});
                 menu_id.css('left','');
               }

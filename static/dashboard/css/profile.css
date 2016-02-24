@@ -1,20 +1,89 @@
+.card-profile {
+	border-radius: 4px;
+	overflow: hidden;
+	margin: 6px;
+	border: 1px solid #e0e0e0;
+	background-color: #fff;
+}
 
-/* PROFILE */
+.profile-wrapper{
+    
+    width:100%;
+    background-color:#ECF0F1;
+}
 
-.profile-image{
-    height: 128px;   
+.profile-image-wrapper {
+	position: absolute;
+	height: 140px;
+	width: 140px;
+	left: calc(50% - 70px);
+	z-index: 1;
+	outline: 5px solid white;
+}
+
+.profile-background-wrapper {
+	height: 33.333333vh;
+	position: relative;
+	background-image: url(../img/profile-bg.jpg);
+	background-size: cover;
+	box-shadow: inset -10px 56px 56px -8px rgba(0,0,0,0.12), inset 10px -56px 56px -8px rgba(0,0,0,0.12);
+	max-height: 240px;
+}
+
+.profile-image {
+	height: 100%;
+	width: 100%;
+
+}
+
+.graphic-wrapper { 
+}
+
+.profile-info-about-user-wrapper {
+	padding: 20px;
+	padding-top: 90px;
 }
 
 span.profile-name {
-    font-size: x-large;
+	font-size: 24px;
+	font-weight: 300;
+}
+span.profile-job {
+	font-size: 18px;
+	font-weight: 300;
 }
 
-span.balance-current{
-    font-size: xx-large;
-    font-weight: 800;
+span.profile-location {
+	font-size: 18px;
+	font-weight: 300;
 }
 
-span.balance-month {
-    /*font-size: small;
-    font-weight: 200;*/
+span.profile-balance {
+	font-size: 24px;
+}
+
+span.profile-activity {
+	font-weight: 300;
+}
+
+.profile-back-button-wrapper{
+	line-height: 0;
+	padding: 6px;
+}
+
+.profile-sticky-header-wrapper{
+	line-height: 0;
+	padding: 6px;
+	z-index: 1;
+	height: 48px;
+}
+
+span.profile-name.profile-sticky-header{
+	font-size: 36px;
+	font-weight: 300;
+}
+
+.sticky-profile-image-wrapper {
+	height: 36px;
+	width: 36px;
 }
