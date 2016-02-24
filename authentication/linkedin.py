@@ -1,25 +1,62 @@
 #!/usr/bin/env python
 from requests_oauthlib import OAuth2Session
 from requests_oauthlib.compliance_fixes import linkedin_compliance_fix
+from django.contrib.auth.models import User
+
+from .models import LinkedinUser
 
 
-client_id = '77zdi1zo7xqmyv'
-client_secret = 'mrQZZaFyBBPwREda'
-authorization_base_url = 'https://www.linkedin.com/uas/oauth2/authorization'
-token_url = 'https://www.linkedin.com/uas/oauth2/accessToken'
-redirect_url = 'https://127.0.0.1/'
+class Linkedin(object):
+    """docstring for Linkedin"""
+    def __init__(self, tokens):
+        token = tokens['linkedin']
+        self.client_id = token['client_id']
+        self.client_secret = token['client_secret']
+        self.auth_base_url = 'https://www.linkedin.com/uas/oauth2/authorization'
+        self.token_url = 'https://www.linkedin.com/uas/oauth2/accessToken'
+        self.redirect_url = 'http://localhost:8000/auth/linkedin/check_response/'
+        self._authorization_url = None
+        self._linkedin = None
 
+    @property
+    def linkedin(self):
+        linkedin = OAuth2Session(self.client_id, redirect_uri=self.redirect_url)
+        linkedin = linkedin_compliance_fix(linkedin)
+        self._linkedin = linkedin
+        return self._linkedin
 
-def login():
-    linkedin = OAuth2Session(client_id, redirect_uri='http://127.0.0.1')
-    linkedin = linkedin_compliance_fix(linkedin)
-    authorization_url, state = linkedin.authorization_url(authorization_base_url)
-    print('Please go here and authorize,', authorization_url)
-    redirect_response = input('Paste the full redirect URL here:')
-    linkedin.fetch_token(token_url, client_secret=client_secret, authorization_response=redirect_response)
-    r = linkedin.get('https://api.linkedin.com/v1/people/~')
-    print(r.content)
+    def login(self):
+        self._authorization_url, state = self.linkedin.authorization_url(self.auth_base_url)
+    
+    @property
+    def authorization_url(self):
+        ''' Only after login'''
+        return self._authorization_url
 
-
-if __name__ == '__main__':
-    login()
+    def linkedin_fetch(self, redirect_response):
+        token = self.linkedin.fetch_token(token_url=self.token_url, client_secret=self.client_secret, authorization_response=redirect_response)
+        response = self.linkedin.get('https://api.linkedin.com/v1/people/~?oauth2_access_token=%s&format=json' % token['access_token'])
+        if response.status_code == 401:
+            return False, False
+        content = response.json()
+        try:
+            first_name = content['firstName']
+            last_name = content['lastName']
+        except Exception:
+            first_name = ''
+            last_name = ''
+        identifier = content['id']
+        try:
+            user = User.objects.get(username=identifier)
+            token = LinkedinUser.objects.get(user=user).access_token
+        except User.DoesNotExist:
+            user = User.objects.create_user(
+                identifier,
+                '%s@linkedin.com' % identifier,
+                token['access_token'])
+            user.first_name = first_name
+            user.last_name = last_name
+            user.save()
+            LinkedinUser.objects.create(user=user, access_token=token['access_token'])
+            token = token['access_token']
+        return identifier, token
