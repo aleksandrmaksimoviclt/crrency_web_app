@@ -1,1 +1,0 @@
-landing -> login - > linkedin.auth -> linkedin.com - > authenticated.view -> dashboard

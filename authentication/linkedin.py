@@ -16,7 +16,7 @@ class Linkedin(object):
         self.auth_base_url = 'https://www.linkedin.com/uas/oauth2/authorization'
         self.token_url = 'https://www.linkedin.com/uas/oauth2/accessToken'
         self.redirect_url = 'http://localhost:8000/auth/linkedin/check_response/'
-        self.redirect_url = 'http://192.168.1.105:8000/auth/linkedin/check_response/'
+        # self.redirect_url = 'http://192.168.1.105:8000/auth/linkedin/check_response/'
         self.request_url = 'https://api.linkedin.com/v1/people/~'
         self._authorization_url = None
         self._linkedin = None

@@ -37,15 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    #crrency apps
+    # crrency apps
     'authentication.apps.AuthenticationConfig',
     'dashboard.apps.DashboardConfig',
     'landing.apps.LandingConfig',
     'transaction.apps.TransactionConfig',
     
-    #pip installed apps
+    # pip installed apps
     'django_extensions',
     'simple_history',
+    'djcelery',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -81,17 +82,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'crrency.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/1.9/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
 
 # Parse database configuration from $DATABASE_URL
 try:
@@ -152,14 +142,23 @@ STATICFILES_DIRS = (
 )
 
 ADMIN_MEDIA_PREFIX = '/static/admin/'
+
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
-#email tests
+
+# email tests
 EMAIL_USE_TLS = True
+
 EMAIL_HOST = 'smtp.gmail.com'
+
 EMAIL_PORT = 587
+
 EMAIL_HOST_USER = 'crrency.co@gmail.com'
+
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD", '')
+
+# Celery backend
+CELERY_RESULT_BACKEND='djcelery.backends.database:DatabaseBackend'
 
 try:
     from .local_settings import *
