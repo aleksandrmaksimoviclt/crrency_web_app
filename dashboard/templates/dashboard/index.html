@@ -13,8 +13,7 @@
   <link rel="icon" type="image/png" href="{% static 'dashboard/img/favicon.png' %}" />
     <!-- CSS  -->
     <!-- Material Design Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500' rel='stylesheet' type='text/css'>
 
@@ -28,6 +27,7 @@
     <link href="{% static 'dashboard/css/people.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="{% static 'dashboard/css/settings.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="{% static 'dashboard/css/search.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
 </head>
 
 <!--Preloader-->
@@ -46,29 +46,82 @@
     </div>
 </div>
 
-<ul id="slide-out" class="side-nav">
-  <li><a href="#!">First Sidebar Link</a></li>
-  <li><a href="#!">Second Sidebar Link</a></li>
-</ul>
-<a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
-
 <!--Navigation Tabs Open-->
-<section class="darkblue fixed" style="width:100%; height:88px; z-index:99;" id="navigation-tabs">
-		<div class="container center logo-header">
-			<img class="logo" src="{% static 'dashboard/img/logo.png' %}">
+<section class="darkblue fixed" style="width:100%; height:96px; z-index: 99" id="navigation-tabs">
+
+		<div class="flexcontainer top-nav">
+			<div class="hamburger-wrapper">
+				<!-- Profile -->
+
+				<a href="#" data-activates="slide-out" class="button-collapse show-on-large hamburger"><i class="material-icons">menu</i></a>
+
+				<ul id="slide-out" class="side-nav">
+
+					<!--<div class="flex-container profile-sticky-header-wrapper fixed" id="profile-sticky-header">
+						<i class="material-icons md-36 white-text" id="profile-back-button">keyboard_backspace</i> 
+						<div class="sticky-profile-image-wrapper">
+							<img class="profile-image" src="{% static "dashboard/img/avatar.jpg" %}" alt="Sender"/>	
+						</div>
+						<div class="name-wrap">
+							<span class="profile-name profile-sticky-header">Aleksandr Maksimovič</span>
+						</div>
+						<div>
+							<span class="profile-balance profile-sticky-header">+150.00</span>
+						</div>
+					</div>-->
+
+					<div class="col s12 center">
+						<div class="profile-wrapper">
+							<div class="profile-background-wrapper">
+								<div class="left profile-back-button-wrapper">
+									<i class="material-icons md-36 white-text" id="profile-back-button">keyboard_backspace</i>
+								</div>
+								
+								<div class="z-depth-2 profile-image-wrapper">
+									<img class="profile-image" src="{% static "dashboard/img/avatar.jpg" %}" alt="Sender"/>	
+								</div>
+							</div>
+							<div class="card-profile profile-info-about-user-wrapper">
+								<span class="profile-name">Aleksandr Maksimovič</span></br>
+								<span class="profile-job">Front-End Developer</span></br>
+								<span class="profile-location">Vilnius, Lithuania</span></br>
+								<span class="profile-balance">+150.00</span></br>
+								<span class="profile-activity">+200.00% This Month</span>
+							</div>
+
+							<div class="card-profile graphic-wrapper">
+								<div id="chart_div" style="width: 100%;"></div>
+							</div>
+						</div>
+
+						<!--<div class="col s12 row nomargin">
+							<div class="col s6">
+								<a href="tel:+37069441362"><i id="phone" class="material-icons md-24 line-height-inherit vertical-allign-bottom">phone</i></a>
+							</div>
+							<div class="col s6">
+								<a href="mailto:asesugeris@muchlove.com"><i id="mail" class="material-icons md-24 line-height-inherit vertical-allign-bottom">mail</i></a>
+							</div>
+						</div>-->
+
+					</div>	
+				</ul>
+				
+			</div>
+			<div class="logo-wrapper">
+				<img class="logo" src="{% static 'dashboard/img/logo.png' %}">
+			</div>
+			<div class="search-wrapper">
+				<i class="material-icons line-height-inherit themewhite-text">search</i>
+			</div>
 		</div>
-		
-		<div class="row">
-			<div class="container">
-				<div class="s12">
-				  <ul class="tabs darkblue preloading" id="tabs">
-				    <li class="tab col-5th"><a id="home" href="#timeline"><i class="material-icons line-height-inherit themewhite-text">home</i></a></li>
-				    <li class="tab col-5th"><a href="#profile"><i class="material-icons line-height-inherit themewhite-text">person</i></a></li>
-				    <li class="tab col-5th"><a href="#people"><i class="material-icons line-height-inherit themewhite-text">people</i></a></li>
-				    <li class="tab col-5th"><a href="#settings"><i class="material-icons line-height-inherit themewhite-text">settings</i></a></li>
-				    <li class="tab col-5th"><a href="#search"><i class="material-icons line-height-inherit themewhite-text">search</i></a></li>
-				  </ul>
-				</div>
+
+		<div class="row bottom-nav">
+			<div class="s12">
+				<ul class="tabs darkblue preloading" id="tabs">
+					<li class="tab col-5th"><a id="home" href="#timeline"><i class="material-icons line-height-inherit themewhite-text">home</i></a></li>
+					<li class="tab col-5th"><a href="#people"><i class="material-icons line-height-inherit themewhite-text">people</i></a></li>
+					<li class="tab col-5th"><a href="#settings"><i class="material-icons line-height-inherit themewhite-text">settings</i></a></li>
+				</ul>
 			</div>
 		</div>	
 </section>
@@ -92,103 +145,87 @@
 
 <!-- Tabs Content Open-->
 
-<section class="hide" style="padding-top: 88px;" id="tabs-content">
+<section class="hide" style="padding-top: 96px;" id="tabs-content">
 	
 	<div id="timeline" class="col s12">
-		<div class="row-feed black-text post white z-depth-2">
-			<div class="col s12 row nomargin post-head">
-				<div class="whotransact">
-					<div class="left">
-						<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
-						<i class="material-icons md-14 line-height-inherit vertical-allign-middle">keyboard_arrow_right</i>
-						<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
+		<article class="z-depth-1" style="background-color: #ffffff;">
+			<header class="whotransact flexcontainer">
+				<div class="flexcontainer left" style="flex:1">
+					<a class="sender-wrapper flexcontainer">
+						<div class="sender-image-wrapper">
+							<img class="sender" src="{% static "dashboard/img/simas.jpg" %}" alt="Sender">
+						</div>
+						<div class="sender-info-wrapper">
+							Simas
+						</div>
+					</a>
+					<div class="arrow-right-wrapper">
+						<i class="material-icons md-14">keyboard_arrow_right</i>
 					</div>
-					<div class="right">
-							<span class="feed-name2 sub">500.00</span>
-					</div>
+					<a class="recipient-wrapper flexcontainer">
+						<div class="recipient-image-wrapper">
+							<img class="recipient" src="{% static "dashboard/img/lukas.jpg" %}" alt="Recipient">
+						</div>
+						<div class="recipient-info-wrapper">
+							Lukas
+						</div>
+					</a>
 				</div>
-			</div>
-			<div class="story">
-				<img class="post-image" src="{% static "dashboard/img/1.jpg" %}" alt="Image"/></br>				
-			</div>
-			<div class="post-foot">
-				<div class="right">
-					<span class="feed-name2 sub time"><i class="material-icons md-14 line-height-inherit vertical-allign-middle">access_time</i> 1 min ago</span>
+				<div class="flexcontainer right">
+					<time datetime="2016-02-17 19:00">23:49</time>
 				</div>
-			</div>
-		</div>
+			</header>
 
-		<div class="row-feed black-text post white z-depth-2">
-			<div class="col s12 row nomargin post-head">
-				<div class="whotransact">
-					<div class="left">
-						<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
-						<i class="material-icons md-14 line-height-inherit vertical-allign-middle">keyboard_arrow_right</i>
-						<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
+				
+			<div class="card nomargin card-shadow">
+			    <div class="card-image waves-effect waves-block waves-light">
+					<img class="activator" src="{% static "dashboard/img/1.jpg" %}">
+			    </div>
+			    <div class="card-content">
+					<span class="card-title activator grey-text text-darken-4">Thanks @simas for a dinner!</span>
+					<br>
+					<div class="flexcontainer">
+						<span class="network-wrapper">We Are Vilnius</span>
+						<span class="amount-wrapper">6900.00</span>
 					</div>
-					<div class="right">
-							<span class="feed-name2 sub">500.00</span>
-					</div>
-				</div>
-			</div>
-			<div class="story">
-				<img class="post-image" src="{% static "dashboard/img/2.jpg" %}" alt="Image"/></br>				
-			</div>
-			<div class="post-foot">
-				<div class="right">
-					<span class="feed-name2 sub time"><i class="material-icons md-14 line-height-inherit vertical-allign-middle">access_time</i> 1 min ago</span>
-				</div>
-			</div>
-		</div>
+			    </div>
+			    <div class="card-reveal">
+					<span class="card-title grey-text text-darken-4">Thanks @simas for a dinner!<i class="material-icons right">close</i></span>
 
-		<div class="row-feed black-text post white z-depth-2">
-			<div class="col s12 row nomargin post-head">
-				<div class="whotransact">
-					<div class="left">
-						<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
-						<i class="material-icons md-14 line-height-inherit vertical-allign-middle">keyboard_arrow_right</i>
-						<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
+					<p class="story">I really liked this dinner from @simas. Rice was cooked better, than japanese farmer could cook!</br></br>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempus eros lectus, non blandit lectus varius ut. Nunc ex dui, aliquet a mi sit amet, mollis auctor eros. Sed finibus porttitor purus, non tempus felis eleifend ut. Cras quis justo ornare urna mollis convallis sit amet vitae justo. Praesent tortor velit, scelerisque eu ex eu, ultricies pretium nibh. Donec vulputate gravida quam aliquam sagittis. Etiam enim leo, porttitor eget enim vitae, auctor mattis lectus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempus eros lectus, non blandit lectus varius ut. Nunc ex dui, aliquet a mi sit amet, mollis auctor eros. Sed finibus porttitor purus, non tempus felis eleifend ut. Cras quis justo ornare urna mollis convallis sit amet vitae justo. Praesent tortor velit, scelerisque eu ex eu, ultricies pretium nibh. Donec vulputate gravida quam aliquam sagittis. Etiam enim leo, porttitor eget enim vitae, auctor mattis lectus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempus eros lectus, non blandit lectus varius ut. Nunc ex dui, aliquet a mi sit amet, mollis auctor eros. Sed finibus porttitor purus, non tempus felis eleifend ut. Cras quis justo ornare urna mollis convallis sit amet vitae justo. Praesent tortor velit, scelerisque eu ex eu, ultricies pretium nibh. Donec vulputate gravida quam aliquam sagittis. Etiam enim leo, porttitor eget enim vitae, auctor mattis lectus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempus eros lectus, non blandit lectus varius ut. Nunc ex dui, aliquet a mi sit amet, mollis auctor eros. Sed finibus porttitor purus, non tempus felis eleifend ut. Cras quis justo ornare urna mollis convallis sit amet vitae justo. Praesent tortor velit, scelerisque eu ex eu, ultricies pretium nibh. Donec vulputate gravida quam aliquam sagittis. Etiam enim leo, porttitor eget enim vitae, auctor mattis lectus.</p>
+					<br>
+					<div class="flexcontainer">
+						<span class="network-wrapper">We Are Vilnius</span>
+						<span class="amount-wrapper">6900.00</span>
 					</div>
-					<div class="right">
-							<span class="feed-name2 sub">500.00</span>
-					</div>
-				</div>
-			</div>
-			<div class="story">
-				<img class="post-image" src="{% static "dashboard/img/3.jpg" %}" alt="Image"/></br>				
-			</div>
-			<div class="post-foot">
-				<div class="right">
-					<span class="feed-name2 sub time"><i class="material-icons md-14 line-height-inherit vertical-allign-middle">access_time</i> 1 min ago</span>
-				</div>
-			</div>
-		</div>
+			    </div>
+			    
+		  	</div>
 
-		<div class="row-feed black-text post white z-depth-2">
-			<div class="col s12 row nomargin post-head">
-				<div class="whotransact">
-					<div class="left">
-						<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
-						<i class="material-icons md-14 line-height-inherit vertical-allign-middle">keyboard_arrow_right</i>
-						<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
-					</div>
-					<div class="right">
-							<span class="feed-name2 sub">500.00</span>
-					</div>
-				</div>
-			</div>
-			<div class="story">
-				<img class="post-image" src="{% static "dashboard/img/4.jpg" %}" alt="Image"/></br>				
-			</div>
-			<div class="post-foot">
-				<div class="right">
-					<span class="feed-name2 sub time"><i class="material-icons md-14 line-height-inherit vertical-allign-middle">access_time</i> 1 min ago</span>
-				</div>
-			</div>
-		</div>	
+		  	<div class="divider-wrapper">
+		  		<div class="divider"></div>
+		  	</div>
+
+		  	<footer class="article-footer flexcontainer">
+		  		<div class="high-five-button-wrapper flexcontainer">
+			  		<img class="high-five" src="{% static "dashboard/img/high-five.svg" %}" alt="High Five Unclicked">
+			  		<div class="high-five-text-wrapper">
+			  			High five!
+			  		</div>
+			  	</div>
+		  		<br>
+		  		<div class="who-high-fived">
+		  			
+		  		</div>	
+		  	</footer>
+			  	
+		</article>
 	</div>
+
+		
 	
-	<div id="profile" class="col s12">
+	<!--<div id="profile" class="col s12">
 		<div class="row-feed black-text post white z-depth-2">
 			<div class="col s12 nopadding whotransact">
 				<div class="col s12 center">
@@ -215,101 +252,9 @@
 				</div>	
 			</div>
 		</div>
+	</div>-->
 
-		<div id="timeline" class="col s12">
-			<div class="row-feed black-text post white z-depth-2">
-				<div class="col s12 row nomargin post-head">
-					<div class="whotransact">
-						<div class="left">
-							<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
-							<i class="material-icons md-14 line-height-inherit vertical-allign-middle">keyboard_arrow_right</i>
-							<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
-						</div>
-						<div class="right">
-								<span class="feed-name2 sub">500.00</span>
-						</div>
-					</div>
-				</div>
-				<div class="story">
-					<img class="post-image" src="{% static "dashboard/img/1.jpg" %}" alt="Image"/></br>				
-				</div>
-				<div class="post-foot">
-					<div class="right">
-						<span class="feed-name2 sub time"><i class="material-icons md-14 line-height-inherit vertical-allign-middle">access_time</i> 1 min ago</span>
-					</div>
-				</div>
-			</div>
-
-			<div class="row-feed black-text post white z-depth-2">
-				<div class="col s12 row nomargin post-head">
-					<div class="whotransact">
-						<div class="left">
-							<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
-							<i class="material-icons md-14 line-height-inherit vertical-allign-middle">keyboard_arrow_right</i>
-							<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
-						</div>
-						<div class="right">
-								<span class="feed-name2 sub">500.00</span>
-						</div>
-					</div>
-				</div>
-				<div class="story">
-					<img class="post-image" src="{% static "dashboard/img/2.jpg" %}" alt="Image"/></br>				
-				</div>
-				<div class="post-foot">
-					<div class="right">
-						<span class="feed-name2 sub time"><i class="material-icons md-14 line-height-inherit vertical-allign-middle">access_time</i> 1 min ago</span>
-					</div>
-				</div>
-			</div>
-
-			<div class="row-feed black-text post white z-depth-2">
-				<div class="col s12 row nomargin post-head">
-					<div class="whotransact">
-						<div class="left">
-							<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
-							<i class="material-icons md-14 line-height-inherit vertical-allign-middle">keyboard_arrow_right</i>
-							<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
-						</div>
-						<div class="right">
-								<span class="feed-name2 sub">500.00</span>
-						</div>
-					</div>
-				</div>
-				<div class="story">
-					<img class="post-image" src="{% static "dashboard/img/3.jpg" %}" alt="Image"/></br>				
-				</div>
-				<div class="post-foot">
-					<div class="right">
-						<span class="feed-name2 sub time"><i class="material-icons md-14 line-height-inherit vertical-allign-middle">access_time</i> 1 min ago</span>
-					</div>
-				</div>
-			</div>
-
-			<div class="row-feed black-text post white z-depth-2">
-				<div class="col s12 row nomargin post-head">
-					<div class="whotransact">
-						<div class="left">
-							<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
-							<i class="material-icons md-14 line-height-inherit vertical-allign-middle">keyboard_arrow_right</i>
-							<div class="chip"><img src="{% static "dashboard/img/simas.jpg" %}" alt="Contact Person">Aleksandras</div>
-						</div>
-						<div class="right">
-							<span class="feed-name2 sub">500.00</span>
-						</div>
-					</div>
-				</div>
-				<div class="story">
-					<img class="post-image" src="{% static "dashboard/img/4.jpg" %}" alt="Image"/></br>				
-				</div>
-				<div class="post-foot">
-					<div class="right">
-						<span class="feed-name2 sub time"><i class="material-icons md-14 line-height-inherit vertical-allign-middle">access_time</i> 1 min ago</span>
-					</div>
-				</div>
-			</div>		
-		</div>
-	</div>
+			
 
 	<div id="people" class="col s12">
 		<div class="col s12">
@@ -329,45 +274,25 @@
 	<div id="settings">
 		
 		<!-- Current Network -->
-
-		<div class="col s12">
-			<div class="row-feed black-text post white z-depth-2">
-				You are on:
-			</div>
-
-			<div class="row-feed black-text post white z-depth-2">
-				<div class="row">
-					<div>
-						<span class="x-large">Network name</span>
-					</div>
-				</div>
-				<div class="row nomargin">
-					<div>
-						<span class="x-large right">10000.00</span>
-					</div>
-				</div>
-				<div class="row">
-					<div>
-						<span class="right">Total money outstanding</span>
-					</div>
-				</div>
-				<div class="row nomargin">
-					<div>
-						<span class="x-large right">+100.00</span>
-					</div>
-				</div>
-				<div class="row nomargin">
-					<div>
-						<span class="right">Personal balance</span>
-					</div>
-				</div>
-			</div>
-		</div>
+		<ul class="collapsible" data-collapsible="expandable">
+			<li>
+				<div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+				<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+			</li>
+			<li>
+				<div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+				<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+			</li>
+			<li>
+				<div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+				<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+			</li>
+		</ul>
 
 		<!-- Aviable Networks -->
 
 
-		<div class="col s12">
+		<!--<div class="col s12">
 			<div class="row-feed black-text post white z-depth-2">
 				Switch to:
 			</div>
@@ -433,16 +358,8 @@
 				</div>
 			</a>
 
-		</div>
+		</div>-->
 
-	</div>
-
-	<div id="search">
-		<div class="col s12">
-			<div class="row-feed black-text post white z-depth-2">
-				Search
-			</div>
-		</div>
 	</div>
 </section>
 
@@ -456,6 +373,12 @@
 <script src="{% static 'dashboard/js/materialize.js' %}"></script>
 <!-- Materialize.js Initialization -->
 <script src="{% static 'dashboard/js/init.js' %}"></script>
+<!-- Google Charts API -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<!-- Charts Initialization -->
+<script src="{% static 'dashboard/js/charts.js' %}"></script>
+<!-- Profile Initialization -->
+<script src="{% static 'dashboard/js/profile.js' %}"></script>
 <!-- Preloader Initialization -->
 <script src="{% static 'dashboard/js/preloader.js' %}" type="text/javascript"></script>
 </body>
