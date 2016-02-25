@@ -4,6 +4,8 @@ from django.db import models
 from django.conf import settings
 from django.utils import timezone
 from simple_history.models import HistoricalRecords
+from stream_django.activity import Activity
+
 
 
 class Currency(models.Model):
@@ -47,17 +49,21 @@ class BorrowingLimit(models.Model):
         return '%s' % self.limit
 
 
-class Transaction(models.Model):
+class Transaction(models.Model, Activity):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    time = models.DateTimeField(default=timezone.now, editable=False)
+    created_at = models.DateTimeField(default=timezone.now, editable=False)
     sender = models.ForeignKey('dashboard.Profile', related_name='sender')
     recipient = models.ForeignKey('dashboard.Profile', related_name='recipient')
     amount = models.FloatField()
     currency = models.ForeignKey(Currency)
+    headline = models.CharField(max_length=30, blank=True)
+    note = models.CharField(max_length=300, null=True, blank=True)
 
     def save(self, *args, **kwargs):
-        if not self.time:
-            self.time = timezone.now()
+        if not self.created_at:
+            self.created_at = timezone.now()
+        if not self.headline:
+            self.headline = 'It was great doing bussiness with you!'
         return super(Transaction, self).save(*args, **kwargs)
 
     def __str__(self):
@@ -67,3 +73,16 @@ class Transaction(models.Model):
             self.amount,
             self.currency.name)
 
+    @property
+    def activity_actor_attr(self):
+        return self.sender
+
+    @property
+    def extra_activity_data(self):
+        return {
+            'recipient': self.recipient.name,
+            'amount': self.amount,
+            'headline': self.headline,
+            'note': self.note,
+        }
+       

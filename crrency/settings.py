@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'simple_history',
     'djcelery',
+    'stream_django',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -158,7 +159,12 @@ EMAIL_HOST_USER = 'crrency.co@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD", '')
 
 # Celery backend
-CELERY_RESULT_BACKEND='djcelery.backends.database:DatabaseBackend'
+CELERY_RESULT_BACKEND = 'djcelery.backends.database:DatabaseBackend'
+
+# http://getstream.io/dashboard/feeds/
+STREAM_API_KEY = 'tuy63dawgmy7'
+
+STREAM_API_SECRET = 'w5mvcgp6gepayuzanajezh82hzes6ga32sbam2efzndvw7h5m6fqqdgu4k9bd45q'
 
 try:
     from .local_settings import *
