@@ -88,10 +88,6 @@
 								<span class="profile-balance">+150.00</span></br>
 								<span class="profile-activity">+200.00% This Month</span>
 							</div>
-
-							<div class="card-profile graphic-wrapper">
-								<div id="chart_div" style="width: 100%;"></div>
-							</div>
 						</div>
 
 						<!--<div class="col s12 row nomargin">
@@ -275,20 +271,28 @@
 		
 		<!-- Current Network -->
 		<ul class="collapsible" data-collapsible="expandable">
-			<li>
+			<li class="network-container">
 				<div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-				<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+				<div class="collapsible-body">
+					<div class="network-wrapper">
+						<div class="graphic-wrapper">
+						    <div id="canvas-holder1">
+				        		<canvas id="chart1" width="300" height="100" />
+				   			</div>
+				   		</div>
+					</div>
+					
+				</div>
 			</li>
-			<li>
+			<li class="network-container">
 				<div class="collapsible-header"><i class="material-icons">place</i>Second</div>
 				<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
 			</li>
-			<li>
+			<li class="network-container">
 				<div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
 				<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
 			</li>
 		</ul>
-
 		<!-- Aviable Networks -->
 
 
@@ -373,8 +377,8 @@
 <script src="{% static 'dashboard/js/materialize.js' %}"></script>
 <!-- Materialize.js Initialization -->
 <script src="{% static 'dashboard/js/init.js' %}"></script>
-<!-- Google Charts API -->
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<!-- Charts.js -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
 <!-- Charts Initialization -->
 <script src="{% static 'dashboard/js/charts.js' %}"></script>
 <!-- Profile Initialization -->
