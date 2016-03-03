@@ -2627,9 +2627,13 @@ ul li {
   box-shadow: none !important;
 }
 
-.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav {
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .side-nav {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
+
+/*.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}*/
 
 .z-depth-1-half, .btn:hover, .btn-large:hover, .btn-floating:hover {
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -8493,10 +8497,10 @@ a.waves-effect .waves-ripple {
 }
 
 .collapsible {
-  border-top: 1px solid #ddd;
+  /*border-top: 1px solid #ddd;
   border-right: 1px solid #ddd;
   border-left: 1px solid #ddd;
-  margin: 0.5rem 0 1rem 0;
+  margin: 0.5rem 0 1rem 0;*/
 }
 
 .collapsible-header {
@@ -8504,9 +8508,9 @@ a.waves-effect .waves-ripple {
   cursor: pointer;
   min-height: 3rem;
   line-height: 3rem;
-  padding: 0 1rem;
+  /*padding: 0 1rem;
   background-color: #fff;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;*/
 }
 
 .collapsible-header i {
@@ -8521,7 +8525,7 @@ a.waves-effect .waves-ripple {
 
 .collapsible-body {
   display: none;
-  border-bottom: 1px solid #ddd;
+  /*border-bottom: 1px solid #ddd;*/
   box-sizing: border-box;
 }
 

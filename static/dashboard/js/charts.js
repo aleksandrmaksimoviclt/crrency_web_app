@@ -15,6 +15,32 @@ var lineChartData = {
     }]
 };
 window.onload = function() {
+
+
+
+  $(".network-container").click(function(){
+
+    
+
+    if( !$(this).hasClass("active") ) {
+      setTimeout(
+        function() {
+          var chartName = document.getElementById('chartName').getContext("2d");
+          window.myLine = new Chart(chartName).Line(lineChartData, {
+            showScale: false,
+            pointDot : false,
+            responsive: true
+          });;
+        },
+      350);
+    } else {
+      myLine.destroy()
+    } 
+  });
+};
+
+
+/*window.onload = function() {
   $(".network-container").click(function(){
     if( !$(this).hasClass("active") ) {
       
@@ -37,4 +63,4 @@ function drawChart(chartName) {
   350);
 
   return();
-};
+}; */

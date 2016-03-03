@@ -145,6 +145,7 @@
 	
 	<div id="timeline" class="col s12">
 		<article class="z-depth-1" style="background-color: #ffffff;">
+
 			<header class="whotransact flexcontainer">
 				<div class="flexcontainer left" style="flex:1">
 					<a class="sender-wrapper flexcontainer">
@@ -174,6 +175,7 @@
 
 				
 			<div class="card nomargin card-shadow">
+
 			    <div class="card-image waves-effect waves-block waves-light">
 					<img class="activator" src="{% static "dashboard/img/1.jpg" %}">
 			    </div>
@@ -204,6 +206,7 @@
 		  	</div>
 
 		  	<footer class="article-footer flexcontainer">
+
 		  		<div class="high-five-button-wrapper flexcontainer">
 			  		<img class="high-five" src="{% static "dashboard/img/high-five.svg" %}" alt="High Five Unclicked">
 			  		<div class="high-five-text-wrapper">
@@ -214,6 +217,7 @@
 		  		<div class="who-high-fived">
 		  			
 		  		</div>	
+
 		  	</footer>
 			  	
 		</article>
@@ -270,29 +274,27 @@
 	<div id="settings">
 		
 		<!-- Current Network -->
-		<ul class="collapsible" data-collapsible="expandable">
-			<li class="network-container">
-				<div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-				<div class="collapsible-body">
-					<div class="network-wrapper">
-						<div class="graphic-wrapper">
+
+		<div class="card-settings">
+			<div class="current-network-wrapper">
+				You are currently connected to:
+			</div>
+
+			<ul class="collapsible" data-collapsible="expandable">
+				<li class="">
+					<div class="collapsible-header network-container"><i class="material-icons">filter_drama</i>We Are Vilnius</div>
+					<div class="collapsible-body">
+						<div class="network-chart-wrapper">
 						    <div id="canvas-holder1">
-				        		<canvas id="chart1" width="300" height="100" />
+				        		<canvas id="chartName" width="300" height="100" />
 				   			</div>
-				   		</div>
+						</div>	
 					</div>
-					
-				</div>
-			</li>
-			<li class="network-container">
-				<div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-				<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-			</li>
-			<li class="network-container">
-				<div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-				<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-			</li>
-		</ul>
+				</li>
+			</ul>	
+
+		</div>
+
 		<!-- Aviable Networks -->
 
 
